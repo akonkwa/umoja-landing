@@ -1,0 +1,74 @@
+PAMOJA
+Agent-Based Social Navigation
+Akonkwa Mubagwa (Harvard) / Oluwatise (MIT) / March 2026
+
+Your network has always been a map, frozen in time.
+Pamoja turns it into a living system that remembers, reasons, and acts.
+
+PROBLEM / USER
+People attend high-value events, classes, and recurring community gatherings with almost no intelligent support for navigating who to meet, why they matter, or how one event connects to the next. Existing tools provide static profiles and attendance lists, but do not accumulate social context over time. Valuable connections are left to luck, memory decays immediately after events, and follow-up is weak.
+
+Core user question:
+"Who here should I meet, given who I am, what I want, and what has already happened across this community?"
+
+WHY THIS MATTERS
+The most important relationships in communities, co-founders, collaborators, mentors, early customers, emerge through repeated context, not one-off introductions. A system that retains and reasons over social context across events can make serendipity systematic.
+
+WHY AGENTIC
+A normal app can store attendee lists, bios, and notes. It cannot reason across a person's goals, event context, prior interactions, and evolving community history to decide what matters now and what should happen next.
+
+Pamoja is agentic because:
+- Each user is represented by a persistent dormant Profile Agent with memory, goals, and callable workflows.
+- Each event is represented by an Event Agent that understands attendees, themes, and event-specific context.
+- When invoked, a Profile Agent queries the Event Agent, retrieves relevant memory, ranks who matters, and recommends concrete actions.
+- After debrief, the Profile Agent updates memory so recommendations improve over time.
+
+CORE IDEA + ARCHITECTURE
+Profile Agent <-> Orchestration Layer <-> Event Agent <-> Shared Memory
+
+Profile Agent:
+persistent per-user agent storing identity, goals, preferences, and relationship memory
+
+Event Agent:
+semi-persistent agent for one event, containing attendees, themes, and contextual notes
+
+Shared Memory:
+stores event participation, interaction summaries, relationship notes, and learned preferences
+
+MVP LOOP
+1. Organizer uploads an attendee list and event metadata.
+2. The system creates draft Profile Agents for attendees.
+3. A user claims their agent and confirms three fields: what they are working on, what they are looking for, and who they want to meet.
+4. The user asks: "Who should I meet at this event?"
+5. Their Profile Agent queries the Event Agent, retrieves cross-event memory, and returns 3 ranked people with reasons.
+6. After the event, the user debriefs who they met and what happened.
+7. The Profile Agent updates memory, improving future recommendations.
+
+MVP SUCCESS METRIC
+A user can claim their agent and receive 3 relevant recommendations in under 90 seconds, and at least one recommendation is rated useful after the event debrief.
+
+WHY US / WHY NOW
+We are building for a setting we directly inhabit: recurring Harvard/MIT cohort-style communities where the same people repeatedly gather but lack intelligent social infrastructure. Function-calling LLMs, lightweight orchestration frameworks, and practical memory systems now make persistent but computationally efficient agents feasible.
+
+FEASIBILITY BY DEADLINE
+We are intentionally scoping the MVP to one workflow and one environment: repeated cohort/class events.
+
+We will build:
+- draft Profile Agent creation from roster and bio data
+- Profile Agent claim and confirmation flow
+- one Event Agent per event
+- one core query: "Who should I meet?"
+- ranked recommendations with explanations
+- post-event debrief with memory writeback
+
+We will not build:
+- a full messaging platform
+- always-on autonomous agents
+- a full graph explorer
+- generalized multi-agent simulations
+
+UNIQUE MOAT
+- Persistent agent memory compounds in value over time
+- Cross-event intelligence is missing from incumbents
+- Closed-cohort deployment solves cold start on day one
+- Every debrief strengthens future retrieval, ranking, and recommendations

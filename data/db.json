@@ -1,0 +1,2109 @@
+{
+  "meta": {
+    "version": 1,
+    "lastUpdatedAt": "2026-04-02T15:37:31.381Z",
+    "seedUniverseV2": true
+  },
+  "communities": [
+    {
+      "id": "community_demo",
+      "name": "PAMOJA Demo Community",
+      "description": "Seed universe for local MVP testing with reusable template events and agent profiles.",
+      "createdAt": "2026-04-02T15:37:29.138Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "seed_user_ada",
+      "email": "ada@pamoja.demo",
+      "name": "Ada Nwosu",
+      "affiliation": "Catalyst Fellows",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_kwame",
+      "email": "kwame@pamoja.demo",
+      "name": "Kwame Boateng",
+      "affiliation": "Harbor Labs",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_priya",
+      "email": "priya@pamoja.demo",
+      "name": "Priya Raman",
+      "affiliation": "Latitude Ventures",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_maya",
+      "email": "maya@pamoja.demo",
+      "name": "Maya Okafor",
+      "affiliation": "Commons Studio",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_daniel",
+      "email": "daniel@pamoja.demo",
+      "name": "Daniel Mensah",
+      "affiliation": "Mesh Protocol",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_lina",
+      "email": "lina@pamoja.demo",
+      "name": "Lina Park",
+      "affiliation": "Northstar Labs",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_samuel",
+      "email": "samuel@pamoja.demo",
+      "name": "Samuel Osei",
+      "affiliation": "CityBridge",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_imani",
+      "email": "imani@pamoja.demo",
+      "name": "Imani Cole",
+      "affiliation": "Canvas Capital",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_noah",
+      "email": "noah@pamoja.demo",
+      "name": "Noah Stein",
+      "affiliation": "Relay Works",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_zuri",
+      "email": "zuri@pamoja.demo",
+      "name": "Zuri Diallo",
+      "affiliation": "Open Guild",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_omar",
+      "email": "omar@pamoja.demo",
+      "name": "Omar Farouk",
+      "affiliation": "Civic Stack",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_sofia",
+      "email": "sofia@pamoja.demo",
+      "name": "Sofia Almeida",
+      "affiliation": "Blue Current",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_tariq",
+      "email": "tariq@pamoja.demo",
+      "name": "Tariq Bell",
+      "affiliation": "Signal House",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_eleni",
+      "email": "eleni@pamoja.demo",
+      "name": "Eleni Kass",
+      "affiliation": "Scholar Engine",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_jules",
+      "email": "jules@pamoja.demo",
+      "name": "Jules Pereira",
+      "affiliation": "Orbit Health",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_amina",
+      "email": "amina@pamoja.demo",
+      "name": "Amina Yusuf",
+      "affiliation": "Bridge Commons",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_gabriel",
+      "email": "gabriel@pamoja.demo",
+      "name": "Gabriel Chen",
+      "affiliation": "Sunline AI",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_nora",
+      "email": "nora@pamoja.demo",
+      "name": "Nora Bedi",
+      "affiliation": "Forum North",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_leo",
+      "email": "leo@pamoja.demo",
+      "name": "Leo Martins",
+      "affiliation": "SeedForge",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_user_chioma",
+      "email": "chioma@pamoja.demo",
+      "name": "Chioma Eze",
+      "affiliation": "Afterglow Labs",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    }
+  ],
+  "events": [
+    {
+      "id": "seed_event_founder_salon",
+      "communityId": "community_demo",
+      "title": "Founder Salon",
+      "description": "Event agent represents who has attended, is attending, and will attend this recurring founder salon.",
+      "startAt": "2026-03-10T18:30:00.000Z",
+      "location": "Cambridge, MA",
+      "tags": [
+        "founders",
+        "operators",
+        "community"
+      ],
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_event_climate_dinner",
+      "communityId": "community_demo",
+      "title": "Climate Operator Dinner",
+      "description": "Event agent represents attendance relationships around climate pilots and partnerships.",
+      "startAt": "2026-03-22T23:00:00.000Z",
+      "location": "Boston, MA",
+      "tags": [
+        "climate",
+        "operators",
+        "pilots"
+      ],
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_event_systems_jam",
+      "communityId": "community_demo",
+      "title": "Community Systems Jam",
+      "description": "Event agent represents the people exploring how community memory and agent tooling connect.",
+      "startAt": "2026-04-03T17:00:00.000Z",
+      "location": "Somerville, MA",
+      "tags": [
+        "community",
+        "systems",
+        "agents"
+      ],
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_event_policy_breakfast",
+      "communityId": "community_demo",
+      "title": "Policy Builders Breakfast",
+      "description": "Event agent represents policy-centric attendance ties across operators, founders, and civic builders.",
+      "startAt": "2026-04-12T13:00:00.000Z",
+      "location": "Washington, DC",
+      "tags": [
+        "policy",
+        "civic",
+        "partnerships"
+      ],
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_event_capital_mixer",
+      "communityId": "community_demo",
+      "title": "Capital and Operators Mixer",
+      "description": "Event agent represents investor-founder-operator attendance links for a high-context capital room.",
+      "startAt": "2026-04-20T22:00:00.000Z",
+      "location": "New York, NY",
+      "tags": [
+        "venture",
+        "founders",
+        "operators"
+      ],
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_event_alumni_demo",
+      "communityId": "community_demo",
+      "title": "Alumni Demo Night",
+      "description": "Event agent represents attendance ties across alumni, operators, and product builders.",
+      "startAt": "2026-05-02T23:30:00.000Z",
+      "location": "Providence, RI",
+      "tags": [
+        "alumni",
+        "demos",
+        "community"
+      ],
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    }
+  ],
+  "eventAttendees": [
+    {
+      "id": "seed_attendee_1_1",
+      "eventId": "seed_event_founder_salon",
+      "userId": "seed_user_ada",
+      "email": "ada@pamoja.demo",
+      "name": "Ada Nwosu",
+      "affiliation": "Catalyst Fellows",
+      "importedBio": "Building climate adaptation marketplaces for coastal cities.",
+      "status": "claimed",
+      "relationStatus": "has_attended",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_1_2",
+      "eventId": "seed_event_founder_salon",
+      "userId": "seed_user_kwame",
+      "email": "kwame@pamoja.demo",
+      "name": "Kwame Boateng",
+      "affiliation": "Harbor Labs",
+      "importedBio": "Operator supporting public-private urban resilience pilots.",
+      "status": "claimed",
+      "relationStatus": "has_attended",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_1_3",
+      "eventId": "seed_event_founder_salon",
+      "userId": "seed_user_maya",
+      "email": "maya@pamoja.demo",
+      "name": "Maya Okafor",
+      "affiliation": "Commons Studio",
+      "importedBio": "Designs rituals and programming for fellowship-style communities.",
+      "status": "claimed",
+      "relationStatus": "has_attended",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_1_4",
+      "eventId": "seed_event_founder_salon",
+      "userId": "seed_user_daniel",
+      "email": "daniel@pamoja.demo",
+      "name": "Daniel Mensah",
+      "affiliation": "Mesh Protocol",
+      "importedBio": "Building identity and coordination tools for recurring communities.",
+      "status": "claimed",
+      "relationStatus": "has_attended",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_1_5",
+      "eventId": "seed_event_founder_salon",
+      "userId": "seed_user_leo",
+      "email": "leo@pamoja.demo",
+      "name": "Leo Martins",
+      "affiliation": "SeedForge",
+      "importedBio": "Angel investor supporting repeat founders in emerging ecosystems.",
+      "status": "claimed",
+      "relationStatus": "has_attended",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_1_6",
+      "eventId": "seed_event_founder_salon",
+      "userId": "seed_user_chioma",
+      "email": "chioma@pamoja.demo",
+      "name": "Chioma Eze",
+      "affiliation": "Afterglow Labs",
+      "importedBio": "Researches trust formation in repeated in-person communities.",
+      "status": "claimed",
+      "relationStatus": "has_attended",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_1_7",
+      "eventId": "seed_event_founder_salon",
+      "userId": "seed_user_tariq",
+      "email": "tariq@pamoja.demo",
+      "name": "Tariq Bell",
+      "affiliation": "Signal House",
+      "importedBio": "Hosts salons for technical founders and civic builders.",
+      "status": "claimed",
+      "relationStatus": "has_attended",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_2_1",
+      "eventId": "seed_event_climate_dinner",
+      "userId": "seed_user_ada",
+      "email": "ada@pamoja.demo",
+      "name": "Ada Nwosu",
+      "affiliation": "Catalyst Fellows",
+      "importedBio": "Building climate adaptation marketplaces for coastal cities.",
+      "status": "claimed",
+      "relationStatus": "attending",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_2_2",
+      "eventId": "seed_event_climate_dinner",
+      "userId": "seed_user_kwame",
+      "email": "kwame@pamoja.demo",
+      "name": "Kwame Boateng",
+      "affiliation": "Harbor Labs",
+      "importedBio": "Operator supporting public-private urban resilience pilots.",
+      "status": "claimed",
+      "relationStatus": "attending",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_2_3",
+      "eventId": "seed_event_climate_dinner",
+      "userId": "seed_user_samuel",
+      "email": "samuel@pamoja.demo",
+      "name": "Samuel Osei",
+      "affiliation": "CityBridge",
+      "importedBio": "Runs urban resilience programs and public-private pilots.",
+      "status": "claimed",
+      "relationStatus": "attending",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_2_4",
+      "eventId": "seed_event_climate_dinner",
+      "userId": "seed_user_sofia",
+      "email": "sofia@pamoja.demo",
+      "name": "Sofia Almeida",
+      "affiliation": "Blue Current",
+      "importedBio": "Climate financier working on blended capital and project origination.",
+      "status": "claimed",
+      "relationStatus": "attending",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_2_5",
+      "eventId": "seed_event_climate_dinner",
+      "userId": "seed_user_omar",
+      "email": "omar@pamoja.demo",
+      "name": "Omar Farouk",
+      "affiliation": "Civic Stack",
+      "importedBio": "Policy technologist connecting founders with public-sector buyers.",
+      "status": "claimed",
+      "relationStatus": "attending",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_2_6",
+      "eventId": "seed_event_climate_dinner",
+      "userId": "seed_user_jules",
+      "email": "jules@pamoja.demo",
+      "name": "Jules Pereira",
+      "affiliation": "Orbit Health",
+      "importedBio": "Health systems founder looking for strategic partnerships.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_2_7",
+      "eventId": "seed_event_climate_dinner",
+      "userId": "seed_user_priya",
+      "email": "priya@pamoja.demo",
+      "name": "Priya Raman",
+      "affiliation": "Latitude Ventures",
+      "importedBio": "Investor exploring workflow software and marketplace infrastructure.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_3_1",
+      "eventId": "seed_event_systems_jam",
+      "userId": "seed_user_maya",
+      "email": "maya@pamoja.demo",
+      "name": "Maya Okafor",
+      "affiliation": "Commons Studio",
+      "importedBio": "Designs rituals and programming for fellowship-style communities.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_3_2",
+      "eventId": "seed_event_systems_jam",
+      "userId": "seed_user_daniel",
+      "email": "daniel@pamoja.demo",
+      "name": "Daniel Mensah",
+      "affiliation": "Mesh Protocol",
+      "importedBio": "Building identity and coordination tools for recurring communities.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_3_3",
+      "eventId": "seed_event_systems_jam",
+      "userId": "seed_user_lina",
+      "email": "lina@pamoja.demo",
+      "name": "Lina Park",
+      "affiliation": "Northstar Labs",
+      "importedBio": "Building tooling for founder communities and event operations.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_3_4",
+      "eventId": "seed_event_systems_jam",
+      "userId": "seed_user_gabriel",
+      "email": "gabriel@pamoja.demo",
+      "name": "Gabriel Chen",
+      "affiliation": "Sunline AI",
+      "importedBio": "Building AI copilots for program managers and event teams.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_3_5",
+      "eventId": "seed_event_systems_jam",
+      "userId": "seed_user_amina",
+      "email": "amina@pamoja.demo",
+      "name": "Amina Yusuf",
+      "affiliation": "Bridge Commons",
+      "importedBio": "Leads member experience for cross-border founder communities.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_3_6",
+      "eventId": "seed_event_systems_jam",
+      "userId": "seed_user_chioma",
+      "email": "chioma@pamoja.demo",
+      "name": "Chioma Eze",
+      "affiliation": "Afterglow Labs",
+      "importedBio": "Researches trust formation in repeated in-person communities.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_3_7",
+      "eventId": "seed_event_systems_jam",
+      "userId": "seed_user_nora",
+      "email": "nora@pamoja.demo",
+      "name": "Nora Bedi",
+      "affiliation": "Forum North",
+      "importedBio": "Runs intimate policy dinners and operator roundtables.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_3_8",
+      "eventId": "seed_event_systems_jam",
+      "userId": "seed_user_noah",
+      "email": "noah@pamoja.demo",
+      "name": "Noah Stein",
+      "affiliation": "Relay Works",
+      "importedBio": "Product lead building software for alumni and member networks.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_4_1",
+      "eventId": "seed_event_policy_breakfast",
+      "userId": "seed_user_omar",
+      "email": "omar@pamoja.demo",
+      "name": "Omar Farouk",
+      "affiliation": "Civic Stack",
+      "importedBio": "Policy technologist connecting founders with public-sector buyers.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_4_2",
+      "eventId": "seed_event_policy_breakfast",
+      "userId": "seed_user_nora",
+      "email": "nora@pamoja.demo",
+      "name": "Nora Bedi",
+      "affiliation": "Forum North",
+      "importedBio": "Runs intimate policy dinners and operator roundtables.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_4_3",
+      "eventId": "seed_event_policy_breakfast",
+      "userId": "seed_user_tariq",
+      "email": "tariq@pamoja.demo",
+      "name": "Tariq Bell",
+      "affiliation": "Signal House",
+      "importedBio": "Hosts salons for technical founders and civic builders.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_4_4",
+      "eventId": "seed_event_policy_breakfast",
+      "userId": "seed_user_ada",
+      "email": "ada@pamoja.demo",
+      "name": "Ada Nwosu",
+      "affiliation": "Catalyst Fellows",
+      "importedBio": "Building climate adaptation marketplaces for coastal cities.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_4_5",
+      "eventId": "seed_event_policy_breakfast",
+      "userId": "seed_user_kwame",
+      "email": "kwame@pamoja.demo",
+      "name": "Kwame Boateng",
+      "affiliation": "Harbor Labs",
+      "importedBio": "Operator supporting public-private urban resilience pilots.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_4_6",
+      "eventId": "seed_event_policy_breakfast",
+      "userId": "seed_user_sofia",
+      "email": "sofia@pamoja.demo",
+      "name": "Sofia Almeida",
+      "affiliation": "Blue Current",
+      "importedBio": "Climate financier working on blended capital and project origination.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_5_1",
+      "eventId": "seed_event_capital_mixer",
+      "userId": "seed_user_priya",
+      "email": "priya@pamoja.demo",
+      "name": "Priya Raman",
+      "affiliation": "Latitude Ventures",
+      "importedBio": "Investor exploring workflow software and marketplace infrastructure.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_5_2",
+      "eventId": "seed_event_capital_mixer",
+      "userId": "seed_user_imani",
+      "email": "imani@pamoja.demo",
+      "name": "Imani Cole",
+      "affiliation": "Canvas Capital",
+      "importedBio": "Investor focused on workflow products and community software.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_5_3",
+      "eventId": "seed_event_capital_mixer",
+      "userId": "seed_user_leo",
+      "email": "leo@pamoja.demo",
+      "name": "Leo Martins",
+      "affiliation": "SeedForge",
+      "importedBio": "Angel investor supporting repeat founders in emerging ecosystems.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_5_4",
+      "eventId": "seed_event_capital_mixer",
+      "userId": "seed_user_jules",
+      "email": "jules@pamoja.demo",
+      "name": "Jules Pereira",
+      "affiliation": "Orbit Health",
+      "importedBio": "Health systems founder looking for strategic partnerships.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_5_5",
+      "eventId": "seed_event_capital_mixer",
+      "userId": "seed_user_lina",
+      "email": "lina@pamoja.demo",
+      "name": "Lina Park",
+      "affiliation": "Northstar Labs",
+      "importedBio": "Building tooling for founder communities and event operations.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_5_6",
+      "eventId": "seed_event_capital_mixer",
+      "userId": "seed_user_samuel",
+      "email": "samuel@pamoja.demo",
+      "name": "Samuel Osei",
+      "affiliation": "CityBridge",
+      "importedBio": "Runs urban resilience programs and public-private pilots.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_5_7",
+      "eventId": "seed_event_capital_mixer",
+      "userId": "seed_user_eleni",
+      "email": "eleni@pamoja.demo",
+      "name": "Eleni Kass",
+      "affiliation": "Scholar Engine",
+      "importedBio": "Building tools for alumni mentorship and cohort accountability.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_6_1",
+      "eventId": "seed_event_alumni_demo",
+      "userId": "seed_user_noah",
+      "email": "noah@pamoja.demo",
+      "name": "Noah Stein",
+      "affiliation": "Relay Works",
+      "importedBio": "Product lead building software for alumni and member networks.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_6_2",
+      "eventId": "seed_event_alumni_demo",
+      "userId": "seed_user_eleni",
+      "email": "eleni@pamoja.demo",
+      "name": "Eleni Kass",
+      "affiliation": "Scholar Engine",
+      "importedBio": "Building tools for alumni mentorship and cohort accountability.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_6_3",
+      "eventId": "seed_event_alumni_demo",
+      "userId": "seed_user_gabriel",
+      "email": "gabriel@pamoja.demo",
+      "name": "Gabriel Chen",
+      "affiliation": "Sunline AI",
+      "importedBio": "Building AI copilots for program managers and event teams.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_6_4",
+      "eventId": "seed_event_alumni_demo",
+      "userId": "seed_user_amina",
+      "email": "amina@pamoja.demo",
+      "name": "Amina Yusuf",
+      "affiliation": "Bridge Commons",
+      "importedBio": "Leads member experience for cross-border founder communities.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_6_5",
+      "eventId": "seed_event_alumni_demo",
+      "userId": "seed_user_chioma",
+      "email": "chioma@pamoja.demo",
+      "name": "Chioma Eze",
+      "affiliation": "Afterglow Labs",
+      "importedBio": "Researches trust formation in repeated in-person communities.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_attendee_6_6",
+      "eventId": "seed_event_alumni_demo",
+      "userId": "seed_user_maya",
+      "email": "maya@pamoja.demo",
+      "name": "Maya Okafor",
+      "affiliation": "Commons Studio",
+      "importedBio": "Designs rituals and programming for fellowship-style communities.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.138Z"
+    },
+    {
+      "id": "seed_attendee_6_7",
+      "eventId": "seed_event_alumni_demo",
+      "userId": "seed_user_daniel",
+      "email": "daniel@pamoja.demo",
+      "name": "Daniel Mensah",
+      "affiliation": "Mesh Protocol",
+      "importedBio": "Building identity and coordination tools for recurring communities.",
+      "status": "claimed",
+      "relationStatus": "will_attend",
+      "createdAt": "2026-04-02T15:37:29.138Z"
+    }
+  ],
+  "profileAgents": [
+    {
+      "id": "seed_agent_1_1",
+      "userId": "seed_user_ada",
+      "attendeeId": "seed_attendee_1_1",
+      "eventId": "seed_event_founder_salon",
+      "draftStatus": "claimed",
+      "bio": "Building climate adaptation marketplaces for coastal cities.",
+      "interests": [
+        "climate",
+        "marketplaces",
+        "policy"
+      ],
+      "goals": [
+        "find pilot city partners",
+        "meet ecosystem operators"
+      ],
+      "lookingFor": [
+        "municipal partners",
+        "community builders"
+      ],
+      "preferences": [
+        "warm intros",
+        "operators"
+      ],
+      "memorySummary": "Ada Nwosu is attending Founder Salon as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_1_2",
+      "userId": "seed_user_kwame",
+      "attendeeId": "seed_attendee_1_2",
+      "eventId": "seed_event_founder_salon",
+      "draftStatus": "claimed",
+      "bio": "Operator supporting public-private urban resilience pilots.",
+      "interests": [
+        "climate",
+        "partnerships",
+        "cities"
+      ],
+      "goals": [
+        "source startups for pilots",
+        "meet technical founders"
+      ],
+      "lookingFor": [
+        "founders",
+        "policy translators"
+      ],
+      "preferences": [
+        "practical builders",
+        "high-context conversations"
+      ],
+      "memorySummary": "Kwame Boateng is attending Founder Salon as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_1_3",
+      "userId": "seed_user_maya",
+      "attendeeId": "seed_attendee_1_3",
+      "eventId": "seed_event_founder_salon",
+      "draftStatus": "claimed",
+      "bio": "Designs rituals and programming for fellowship-style communities.",
+      "interests": [
+        "community",
+        "fellowships",
+        "program design"
+      ],
+      "goals": [
+        "increase trust density",
+        "meet technical collaborators"
+      ],
+      "lookingFor": [
+        "community operators",
+        "product thinkers"
+      ],
+      "preferences": [
+        "generous people",
+        "systems thinkers"
+      ],
+      "memorySummary": "Maya Okafor is attending Founder Salon as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_1_4",
+      "userId": "seed_user_daniel",
+      "attendeeId": "seed_attendee_1_4",
+      "eventId": "seed_event_founder_salon",
+      "draftStatus": "claimed",
+      "bio": "Building identity and coordination tools for recurring communities.",
+      "interests": [
+        "identity",
+        "communities",
+        "agent systems"
+      ],
+      "goals": [
+        "find design partners",
+        "meet network organizers"
+      ],
+      "lookingFor": [
+        "community leads",
+        "pilot programs"
+      ],
+      "preferences": [
+        "productive intros",
+        "clear use cases"
+      ],
+      "memorySummary": "Daniel Mensah is attending Founder Salon as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_1_5",
+      "userId": "seed_user_leo",
+      "attendeeId": "seed_attendee_1_5",
+      "eventId": "seed_event_founder_salon",
+      "draftStatus": "claimed",
+      "bio": "Angel investor supporting repeat founders in emerging ecosystems.",
+      "interests": [
+        "venture",
+        "ecosystems",
+        "founders"
+      ],
+      "goals": [
+        "find strong operators",
+        "meet builders"
+      ],
+      "lookingFor": [
+        "repeat founders",
+        "community leads"
+      ],
+      "preferences": [
+        "signal",
+        "trajectory"
+      ],
+      "memorySummary": "Leo Martins is attending Founder Salon as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_1_6",
+      "userId": "seed_user_chioma",
+      "attendeeId": "seed_attendee_1_6",
+      "eventId": "seed_event_founder_salon",
+      "draftStatus": "claimed",
+      "bio": "Researches trust formation in repeated in-person communities.",
+      "interests": [
+        "trust",
+        "research",
+        "communities"
+      ],
+      "goals": [
+        "study event patterns",
+        "meet product builders"
+      ],
+      "lookingFor": [
+        "community operators",
+        "research partners"
+      ],
+      "preferences": [
+        "depth",
+        "care"
+      ],
+      "memorySummary": "Chioma Eze is attending Founder Salon as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_1_7",
+      "userId": "seed_user_tariq",
+      "attendeeId": "seed_attendee_1_7",
+      "eventId": "seed_event_founder_salon",
+      "draftStatus": "claimed",
+      "bio": "Hosts salons for technical founders and civic builders.",
+      "interests": [
+        "events",
+        "founders",
+        "civic tech"
+      ],
+      "goals": [
+        "curate stronger rooms",
+        "meet community designers"
+      ],
+      "lookingFor": [
+        "operators",
+        "facilitators"
+      ],
+      "preferences": [
+        "taste",
+        "high-signal conversations"
+      ],
+      "memorySummary": "Tariq Bell is attending Founder Salon as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_2_1",
+      "userId": "seed_user_ada",
+      "attendeeId": "seed_attendee_2_1",
+      "eventId": "seed_event_climate_dinner",
+      "draftStatus": "claimed",
+      "bio": "Building climate adaptation marketplaces for coastal cities.",
+      "interests": [
+        "climate",
+        "marketplaces",
+        "policy"
+      ],
+      "goals": [
+        "find pilot city partners",
+        "meet ecosystem operators"
+      ],
+      "lookingFor": [
+        "municipal partners",
+        "community builders"
+      ],
+      "preferences": [
+        "warm intros",
+        "operators"
+      ],
+      "memorySummary": "Ada Nwosu is attending Climate Operator Dinner as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_2_2",
+      "userId": "seed_user_kwame",
+      "attendeeId": "seed_attendee_2_2",
+      "eventId": "seed_event_climate_dinner",
+      "draftStatus": "claimed",
+      "bio": "Operator supporting public-private urban resilience pilots.",
+      "interests": [
+        "climate",
+        "partnerships",
+        "cities"
+      ],
+      "goals": [
+        "source startups for pilots",
+        "meet technical founders"
+      ],
+      "lookingFor": [
+        "founders",
+        "policy translators"
+      ],
+      "preferences": [
+        "practical builders",
+        "high-context conversations"
+      ],
+      "memorySummary": "Kwame Boateng is attending Climate Operator Dinner as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_2_3",
+      "userId": "seed_user_samuel",
+      "attendeeId": "seed_attendee_2_3",
+      "eventId": "seed_event_climate_dinner",
+      "draftStatus": "claimed",
+      "bio": "Runs urban resilience programs and public-private pilots.",
+      "interests": [
+        "climate",
+        "cities",
+        "partnerships"
+      ],
+      "goals": [
+        "find startups for pilots"
+      ],
+      "lookingFor": [
+        "founders",
+        "policy translators"
+      ],
+      "preferences": [
+        "clear use cases",
+        "operators"
+      ],
+      "memorySummary": "Samuel Osei is attending Climate Operator Dinner as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_2_4",
+      "userId": "seed_user_sofia",
+      "attendeeId": "seed_attendee_2_4",
+      "eventId": "seed_event_climate_dinner",
+      "draftStatus": "claimed",
+      "bio": "Climate financier working on blended capital and project origination.",
+      "interests": [
+        "climate",
+        "finance",
+        "infrastructure"
+      ],
+      "goals": [
+        "find bankable teams",
+        "meet city operators"
+      ],
+      "lookingFor": [
+        "project developers",
+        "ecosystem builders"
+      ],
+      "preferences": [
+        "substance",
+        "strong operators"
+      ],
+      "memorySummary": "Sofia Almeida is attending Climate Operator Dinner as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_2_5",
+      "userId": "seed_user_omar",
+      "attendeeId": "seed_attendee_2_5",
+      "eventId": "seed_event_climate_dinner",
+      "draftStatus": "claimed",
+      "bio": "Policy technologist connecting founders with public-sector buyers.",
+      "interests": [
+        "policy",
+        "govtech",
+        "partnerships"
+      ],
+      "goals": [
+        "meet founders",
+        "source pilot demand"
+      ],
+      "lookingFor": [
+        "technical teams",
+        "operators"
+      ],
+      "preferences": [
+        "mission fit",
+        "speed"
+      ],
+      "memorySummary": "Omar Farouk is attending Climate Operator Dinner as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_2_6",
+      "userId": "seed_user_jules",
+      "attendeeId": "seed_attendee_2_6",
+      "eventId": "seed_event_climate_dinner",
+      "draftStatus": "claimed",
+      "bio": "Health systems founder looking for strategic partnerships.",
+      "interests": [
+        "health",
+        "systems",
+        "partnerships"
+      ],
+      "goals": [
+        "meet operators",
+        "find investors"
+      ],
+      "lookingFor": [
+        "pilot sites",
+        "capital partners"
+      ],
+      "preferences": [
+        "speed",
+        "useful intros"
+      ],
+      "memorySummary": "Jules Pereira is attending Climate Operator Dinner as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_2_7",
+      "userId": "seed_user_priya",
+      "attendeeId": "seed_attendee_2_7",
+      "eventId": "seed_event_climate_dinner",
+      "draftStatus": "claimed",
+      "bio": "Investor exploring workflow software and marketplace infrastructure.",
+      "interests": [
+        "marketplaces",
+        "venture",
+        "fintech"
+      ],
+      "goals": [
+        "find strong founders",
+        "understand climate adjacency"
+      ],
+      "lookingFor": [
+        "fundable teams",
+        "repeat founders"
+      ],
+      "preferences": [
+        "clear traction",
+        "strong operators"
+      ],
+      "memorySummary": "Priya Raman is attending Climate Operator Dinner as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_3_1",
+      "userId": "seed_user_maya",
+      "attendeeId": "seed_attendee_3_1",
+      "eventId": "seed_event_systems_jam",
+      "draftStatus": "claimed",
+      "bio": "Designs rituals and programming for fellowship-style communities.",
+      "interests": [
+        "community",
+        "fellowships",
+        "program design"
+      ],
+      "goals": [
+        "increase trust density",
+        "meet technical collaborators"
+      ],
+      "lookingFor": [
+        "community operators",
+        "product thinkers"
+      ],
+      "preferences": [
+        "generous people",
+        "systems thinkers"
+      ],
+      "memorySummary": "Maya Okafor is attending Community Systems Jam as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_3_2",
+      "userId": "seed_user_daniel",
+      "attendeeId": "seed_attendee_3_2",
+      "eventId": "seed_event_systems_jam",
+      "draftStatus": "claimed",
+      "bio": "Building identity and coordination tools for recurring communities.",
+      "interests": [
+        "identity",
+        "communities",
+        "agent systems"
+      ],
+      "goals": [
+        "find design partners",
+        "meet network organizers"
+      ],
+      "lookingFor": [
+        "community leads",
+        "pilot programs"
+      ],
+      "preferences": [
+        "productive intros",
+        "clear use cases"
+      ],
+      "memorySummary": "Daniel Mensah is attending Community Systems Jam as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_3_3",
+      "userId": "seed_user_lina",
+      "attendeeId": "seed_attendee_3_3",
+      "eventId": "seed_event_systems_jam",
+      "draftStatus": "claimed",
+      "bio": "Building tooling for founder communities and event operations.",
+      "interests": [
+        "community",
+        "founders",
+        "software"
+      ],
+      "goals": [
+        "find pilot partners",
+        "meet operators"
+      ],
+      "lookingFor": [
+        "community builders",
+        "design partners"
+      ],
+      "preferences": [
+        "warm intros",
+        "practical builders"
+      ],
+      "memorySummary": "Lina Park is attending Community Systems Jam as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_3_4",
+      "userId": "seed_user_gabriel",
+      "attendeeId": "seed_attendee_3_4",
+      "eventId": "seed_event_systems_jam",
+      "draftStatus": "claimed",
+      "bio": "Building AI copilots for program managers and event teams.",
+      "interests": [
+        "ai",
+        "workflows",
+        "events"
+      ],
+      "goals": [
+        "meet design partners",
+        "find community operators"
+      ],
+      "lookingFor": [
+        "pilot customers",
+        "ops leaders"
+      ],
+      "preferences": [
+        "fast feedback",
+        "clear pain points"
+      ],
+      "memorySummary": "Gabriel Chen is attending Community Systems Jam as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_3_5",
+      "userId": "seed_user_amina",
+      "attendeeId": "seed_attendee_3_5",
+      "eventId": "seed_event_systems_jam",
+      "draftStatus": "claimed",
+      "bio": "Leads member experience for cross-border founder communities.",
+      "interests": [
+        "community",
+        "member experience",
+        "operations"
+      ],
+      "goals": [
+        "improve onboarding",
+        "meet software builders"
+      ],
+      "lookingFor": [
+        "product teams",
+        "network operators"
+      ],
+      "preferences": [
+        "service",
+        "clarity"
+      ],
+      "memorySummary": "Amina Yusuf is attending Community Systems Jam as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_3_6",
+      "userId": "seed_user_chioma",
+      "attendeeId": "seed_attendee_3_6",
+      "eventId": "seed_event_systems_jam",
+      "draftStatus": "claimed",
+      "bio": "Researches trust formation in repeated in-person communities.",
+      "interests": [
+        "trust",
+        "research",
+        "communities"
+      ],
+      "goals": [
+        "study event patterns",
+        "meet product builders"
+      ],
+      "lookingFor": [
+        "community operators",
+        "research partners"
+      ],
+      "preferences": [
+        "depth",
+        "care"
+      ],
+      "memorySummary": "Chioma Eze is attending Community Systems Jam as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_3_7",
+      "userId": "seed_user_nora",
+      "attendeeId": "seed_attendee_3_7",
+      "eventId": "seed_event_systems_jam",
+      "draftStatus": "claimed",
+      "bio": "Runs intimate policy dinners and operator roundtables.",
+      "interests": [
+        "policy",
+        "events",
+        "community"
+      ],
+      "goals": [
+        "curate stronger attendance",
+        "meet systems thinkers"
+      ],
+      "lookingFor": [
+        "operators",
+        "facilitators"
+      ],
+      "preferences": [
+        "warmth",
+        "high-context rooms"
+      ],
+      "memorySummary": "Nora Bedi is attending Community Systems Jam as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_3_8",
+      "userId": "seed_user_noah",
+      "attendeeId": "seed_attendee_3_8",
+      "eventId": "seed_event_systems_jam",
+      "draftStatus": "claimed",
+      "bio": "Product lead building software for alumni and member networks.",
+      "interests": [
+        "alumni",
+        "product",
+        "communities"
+      ],
+      "goals": [
+        "learn from operators",
+        "find distribution partners"
+      ],
+      "lookingFor": [
+        "network organizers",
+        "design-minded founders"
+      ],
+      "preferences": [
+        "clarity",
+        "execution"
+      ],
+      "memorySummary": "Noah Stein is attending Community Systems Jam as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_4_1",
+      "userId": "seed_user_omar",
+      "attendeeId": "seed_attendee_4_1",
+      "eventId": "seed_event_policy_breakfast",
+      "draftStatus": "claimed",
+      "bio": "Policy technologist connecting founders with public-sector buyers.",
+      "interests": [
+        "policy",
+        "govtech",
+        "partnerships"
+      ],
+      "goals": [
+        "meet founders",
+        "source pilot demand"
+      ],
+      "lookingFor": [
+        "technical teams",
+        "operators"
+      ],
+      "preferences": [
+        "mission fit",
+        "speed"
+      ],
+      "memorySummary": "Omar Farouk is attending Policy Builders Breakfast as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_4_2",
+      "userId": "seed_user_nora",
+      "attendeeId": "seed_attendee_4_2",
+      "eventId": "seed_event_policy_breakfast",
+      "draftStatus": "claimed",
+      "bio": "Runs intimate policy dinners and operator roundtables.",
+      "interests": [
+        "policy",
+        "events",
+        "community"
+      ],
+      "goals": [
+        "curate stronger attendance",
+        "meet systems thinkers"
+      ],
+      "lookingFor": [
+        "operators",
+        "facilitators"
+      ],
+      "preferences": [
+        "warmth",
+        "high-context rooms"
+      ],
+      "memorySummary": "Nora Bedi is attending Policy Builders Breakfast as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_4_3",
+      "userId": "seed_user_tariq",
+      "attendeeId": "seed_attendee_4_3",
+      "eventId": "seed_event_policy_breakfast",
+      "draftStatus": "claimed",
+      "bio": "Hosts salons for technical founders and civic builders.",
+      "interests": [
+        "events",
+        "founders",
+        "civic tech"
+      ],
+      "goals": [
+        "curate stronger rooms",
+        "meet community designers"
+      ],
+      "lookingFor": [
+        "operators",
+        "facilitators"
+      ],
+      "preferences": [
+        "taste",
+        "high-signal conversations"
+      ],
+      "memorySummary": "Tariq Bell is attending Policy Builders Breakfast as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_4_4",
+      "userId": "seed_user_ada",
+      "attendeeId": "seed_attendee_4_4",
+      "eventId": "seed_event_policy_breakfast",
+      "draftStatus": "claimed",
+      "bio": "Building climate adaptation marketplaces for coastal cities.",
+      "interests": [
+        "climate",
+        "marketplaces",
+        "policy"
+      ],
+      "goals": [
+        "find pilot city partners",
+        "meet ecosystem operators"
+      ],
+      "lookingFor": [
+        "municipal partners",
+        "community builders"
+      ],
+      "preferences": [
+        "warm intros",
+        "operators"
+      ],
+      "memorySummary": "Ada Nwosu is attending Policy Builders Breakfast as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_4_5",
+      "userId": "seed_user_kwame",
+      "attendeeId": "seed_attendee_4_5",
+      "eventId": "seed_event_policy_breakfast",
+      "draftStatus": "claimed",
+      "bio": "Operator supporting public-private urban resilience pilots.",
+      "interests": [
+        "climate",
+        "partnerships",
+        "cities"
+      ],
+      "goals": [
+        "source startups for pilots",
+        "meet technical founders"
+      ],
+      "lookingFor": [
+        "founders",
+        "policy translators"
+      ],
+      "preferences": [
+        "practical builders",
+        "high-context conversations"
+      ],
+      "memorySummary": "Kwame Boateng is attending Policy Builders Breakfast as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_4_6",
+      "userId": "seed_user_sofia",
+      "attendeeId": "seed_attendee_4_6",
+      "eventId": "seed_event_policy_breakfast",
+      "draftStatus": "claimed",
+      "bio": "Climate financier working on blended capital and project origination.",
+      "interests": [
+        "climate",
+        "finance",
+        "infrastructure"
+      ],
+      "goals": [
+        "find bankable teams",
+        "meet city operators"
+      ],
+      "lookingFor": [
+        "project developers",
+        "ecosystem builders"
+      ],
+      "preferences": [
+        "substance",
+        "strong operators"
+      ],
+      "memorySummary": "Sofia Almeida is attending Policy Builders Breakfast as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_5_1",
+      "userId": "seed_user_priya",
+      "attendeeId": "seed_attendee_5_1",
+      "eventId": "seed_event_capital_mixer",
+      "draftStatus": "claimed",
+      "bio": "Investor exploring workflow software and marketplace infrastructure.",
+      "interests": [
+        "marketplaces",
+        "venture",
+        "fintech"
+      ],
+      "goals": [
+        "find strong founders",
+        "understand climate adjacency"
+      ],
+      "lookingFor": [
+        "fundable teams",
+        "repeat founders"
+      ],
+      "preferences": [
+        "clear traction",
+        "strong operators"
+      ],
+      "memorySummary": "Priya Raman is attending Capital and Operators Mixer as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_5_2",
+      "userId": "seed_user_imani",
+      "attendeeId": "seed_attendee_5_2",
+      "eventId": "seed_event_capital_mixer",
+      "draftStatus": "claimed",
+      "bio": "Investor focused on workflow products and community software.",
+      "interests": [
+        "venture",
+        "community",
+        "workflow"
+      ],
+      "goals": [
+        "meet strong founders",
+        "understand event intelligence"
+      ],
+      "lookingFor": [
+        "fundable teams",
+        "repeat builders"
+      ],
+      "preferences": [
+        "traction",
+        "focused conversations"
+      ],
+      "memorySummary": "Imani Cole is attending Capital and Operators Mixer as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_5_3",
+      "userId": "seed_user_leo",
+      "attendeeId": "seed_attendee_5_3",
+      "eventId": "seed_event_capital_mixer",
+      "draftStatus": "claimed",
+      "bio": "Angel investor supporting repeat founders in emerging ecosystems.",
+      "interests": [
+        "venture",
+        "ecosystems",
+        "founders"
+      ],
+      "goals": [
+        "find strong operators",
+        "meet builders"
+      ],
+      "lookingFor": [
+        "repeat founders",
+        "community leads"
+      ],
+      "preferences": [
+        "signal",
+        "trajectory"
+      ],
+      "memorySummary": "Leo Martins is attending Capital and Operators Mixer as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_5_4",
+      "userId": "seed_user_jules",
+      "attendeeId": "seed_attendee_5_4",
+      "eventId": "seed_event_capital_mixer",
+      "draftStatus": "claimed",
+      "bio": "Health systems founder looking for strategic partnerships.",
+      "interests": [
+        "health",
+        "systems",
+        "partnerships"
+      ],
+      "goals": [
+        "meet operators",
+        "find investors"
+      ],
+      "lookingFor": [
+        "pilot sites",
+        "capital partners"
+      ],
+      "preferences": [
+        "speed",
+        "useful intros"
+      ],
+      "memorySummary": "Jules Pereira is attending Capital and Operators Mixer as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_5_5",
+      "userId": "seed_user_lina",
+      "attendeeId": "seed_attendee_5_5",
+      "eventId": "seed_event_capital_mixer",
+      "draftStatus": "claimed",
+      "bio": "Building tooling for founder communities and event operations.",
+      "interests": [
+        "community",
+        "founders",
+        "software"
+      ],
+      "goals": [
+        "find pilot partners",
+        "meet operators"
+      ],
+      "lookingFor": [
+        "community builders",
+        "design partners"
+      ],
+      "preferences": [
+        "warm intros",
+        "practical builders"
+      ],
+      "memorySummary": "Lina Park is attending Capital and Operators Mixer as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_5_6",
+      "userId": "seed_user_samuel",
+      "attendeeId": "seed_attendee_5_6",
+      "eventId": "seed_event_capital_mixer",
+      "draftStatus": "claimed",
+      "bio": "Runs urban resilience programs and public-private pilots.",
+      "interests": [
+        "climate",
+        "cities",
+        "partnerships"
+      ],
+      "goals": [
+        "find startups for pilots"
+      ],
+      "lookingFor": [
+        "founders",
+        "policy translators"
+      ],
+      "preferences": [
+        "clear use cases",
+        "operators"
+      ],
+      "memorySummary": "Samuel Osei is attending Capital and Operators Mixer as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_5_7",
+      "userId": "seed_user_eleni",
+      "attendeeId": "seed_attendee_5_7",
+      "eventId": "seed_event_capital_mixer",
+      "draftStatus": "claimed",
+      "bio": "Building tools for alumni mentorship and cohort accountability.",
+      "interests": [
+        "alumni",
+        "education",
+        "workflows"
+      ],
+      "goals": [
+        "meet distribution partners",
+        "find pilot schools"
+      ],
+      "lookingFor": [
+        "community leads",
+        "operators"
+      ],
+      "preferences": [
+        "clarity",
+        "follow-through"
+      ],
+      "memorySummary": "Eleni Kass is attending Capital and Operators Mixer as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_6_1",
+      "userId": "seed_user_noah",
+      "attendeeId": "seed_attendee_6_1",
+      "eventId": "seed_event_alumni_demo",
+      "draftStatus": "claimed",
+      "bio": "Product lead building software for alumni and member networks.",
+      "interests": [
+        "alumni",
+        "product",
+        "communities"
+      ],
+      "goals": [
+        "learn from operators",
+        "find distribution partners"
+      ],
+      "lookingFor": [
+        "network organizers",
+        "design-minded founders"
+      ],
+      "preferences": [
+        "clarity",
+        "execution"
+      ],
+      "memorySummary": "Noah Stein is attending Alumni Demo Night as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_6_2",
+      "userId": "seed_user_eleni",
+      "attendeeId": "seed_attendee_6_2",
+      "eventId": "seed_event_alumni_demo",
+      "draftStatus": "claimed",
+      "bio": "Building tools for alumni mentorship and cohort accountability.",
+      "interests": [
+        "alumni",
+        "education",
+        "workflows"
+      ],
+      "goals": [
+        "meet distribution partners",
+        "find pilot schools"
+      ],
+      "lookingFor": [
+        "community leads",
+        "operators"
+      ],
+      "preferences": [
+        "clarity",
+        "follow-through"
+      ],
+      "memorySummary": "Eleni Kass is attending Alumni Demo Night as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_6_3",
+      "userId": "seed_user_gabriel",
+      "attendeeId": "seed_attendee_6_3",
+      "eventId": "seed_event_alumni_demo",
+      "draftStatus": "claimed",
+      "bio": "Building AI copilots for program managers and event teams.",
+      "interests": [
+        "ai",
+        "workflows",
+        "events"
+      ],
+      "goals": [
+        "meet design partners",
+        "find community operators"
+      ],
+      "lookingFor": [
+        "pilot customers",
+        "ops leaders"
+      ],
+      "preferences": [
+        "fast feedback",
+        "clear pain points"
+      ],
+      "memorySummary": "Gabriel Chen is attending Alumni Demo Night as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_6_4",
+      "userId": "seed_user_amina",
+      "attendeeId": "seed_attendee_6_4",
+      "eventId": "seed_event_alumni_demo",
+      "draftStatus": "claimed",
+      "bio": "Leads member experience for cross-border founder communities.",
+      "interests": [
+        "community",
+        "member experience",
+        "operations"
+      ],
+      "goals": [
+        "improve onboarding",
+        "meet software builders"
+      ],
+      "lookingFor": [
+        "product teams",
+        "network operators"
+      ],
+      "preferences": [
+        "service",
+        "clarity"
+      ],
+      "memorySummary": "Amina Yusuf is attending Alumni Demo Night as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.137Z",
+      "updatedAt": "2026-04-02T15:37:29.137Z"
+    },
+    {
+      "id": "seed_agent_6_5",
+      "userId": "seed_user_chioma",
+      "attendeeId": "seed_attendee_6_5",
+      "eventId": "seed_event_alumni_demo",
+      "draftStatus": "claimed",
+      "bio": "Researches trust formation in repeated in-person communities.",
+      "interests": [
+        "trust",
+        "research",
+        "communities"
+      ],
+      "goals": [
+        "study event patterns",
+        "meet product builders"
+      ],
+      "lookingFor": [
+        "community operators",
+        "research partners"
+      ],
+      "preferences": [
+        "depth",
+        "care"
+      ],
+      "memorySummary": "Chioma Eze is attending Alumni Demo Night as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.138Z",
+      "updatedAt": "2026-04-02T15:37:29.138Z"
+    },
+    {
+      "id": "seed_agent_6_6",
+      "userId": "seed_user_maya",
+      "attendeeId": "seed_attendee_6_6",
+      "eventId": "seed_event_alumni_demo",
+      "draftStatus": "claimed",
+      "bio": "Designs rituals and programming for fellowship-style communities.",
+      "interests": [
+        "community",
+        "fellowships",
+        "program design"
+      ],
+      "goals": [
+        "increase trust density",
+        "meet technical collaborators"
+      ],
+      "lookingFor": [
+        "community operators",
+        "product thinkers"
+      ],
+      "preferences": [
+        "generous people",
+        "systems thinkers"
+      ],
+      "memorySummary": "Maya Okafor is attending Alumni Demo Night as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.138Z",
+      "updatedAt": "2026-04-02T15:37:29.138Z"
+    },
+    {
+      "id": "seed_agent_6_7",
+      "userId": "seed_user_daniel",
+      "attendeeId": "seed_attendee_6_7",
+      "eventId": "seed_event_alumni_demo",
+      "draftStatus": "claimed",
+      "bio": "Building identity and coordination tools for recurring communities.",
+      "interests": [
+        "identity",
+        "communities",
+        "agent systems"
+      ],
+      "goals": [
+        "find design partners",
+        "meet network organizers"
+      ],
+      "lookingFor": [
+        "community leads",
+        "pilot programs"
+      ],
+      "preferences": [
+        "productive intros",
+        "clear use cases"
+      ],
+      "memorySummary": "Daniel Mensah is attending Alumni Demo Night as part of a recurring community network.",
+      "consentedMemory": true,
+      "createdAt": "2026-04-02T15:37:29.138Z",
+      "updatedAt": "2026-04-02T15:37:29.138Z"
+    }
+  ],
+  "eventAgents": [
+    {
+      "id": "seed_event_agent_1",
+      "eventId": "seed_event_founder_salon",
+      "summary": "Founder Salon exists to represent who has attended, is attending, and will attend this event.",
+      "themes": [
+        "founders",
+        "operators",
+        "community"
+      ],
+      "createdAt": "2026-04-02T15:37:29.138Z",
+      "updatedAt": "2026-04-02T15:37:29.138Z"
+    },
+    {
+      "id": "seed_event_agent_2",
+      "eventId": "seed_event_climate_dinner",
+      "summary": "Climate Operator Dinner exists to represent who has attended, is attending, and will attend this event.",
+      "themes": [
+        "climate",
+        "operators",
+        "pilots"
+      ],
+      "createdAt": "2026-04-02T15:37:29.138Z",
+      "updatedAt": "2026-04-02T15:37:29.138Z"
+    },
+    {
+      "id": "seed_event_agent_3",
+      "eventId": "seed_event_systems_jam",
+      "summary": "Community Systems Jam exists to represent who has attended, is attending, and will attend this event.",
+      "themes": [
+        "community",
+        "systems",
+        "agents"
+      ],
+      "createdAt": "2026-04-02T15:37:29.138Z",
+      "updatedAt": "2026-04-02T15:37:29.138Z"
+    },
+    {
+      "id": "seed_event_agent_4",
+      "eventId": "seed_event_policy_breakfast",
+      "summary": "Policy Builders Breakfast exists to represent who has attended, is attending, and will attend this event.",
+      "themes": [
+        "policy",
+        "civic",
+        "partnerships"
+      ],
+      "createdAt": "2026-04-02T15:37:29.138Z",
+      "updatedAt": "2026-04-02T15:37:29.138Z"
+    },
+    {
+      "id": "seed_event_agent_5",
+      "eventId": "seed_event_capital_mixer",
+      "summary": "Capital and Operators Mixer exists to represent who has attended, is attending, and will attend this event.",
+      "themes": [
+        "venture",
+        "founders",
+        "operators"
+      ],
+      "createdAt": "2026-04-02T15:37:29.138Z",
+      "updatedAt": "2026-04-02T15:37:29.138Z"
+    },
+    {
+      "id": "seed_event_agent_6",
+      "eventId": "seed_event_alumni_demo",
+      "summary": "Alumni Demo Night exists to represent who has attended, is attending, and will attend this event.",
+      "themes": [
+        "alumni",
+        "demos",
+        "community"
+      ],
+      "createdAt": "2026-04-02T15:37:29.138Z",
+      "updatedAt": "2026-04-02T15:37:29.138Z"
+    }
+  ],
+  "profileMemory": [
+    {
+      "id": "memory_ada_1",
+      "profileAgentId": "seed_agent_1_1",
+      "memoryType": "summary",
+      "content": "Ada gets the most value from operator-heavy intros tied to real pilots.",
+      "sourceEventId": "seed_event_founder_salon",
+      "createdAt": "2026-04-02T15:37:29.138Z"
+    }
+  ],
+  "interactionMemory": [
+    {
+      "id": "seed_interaction_1",
+      "profileAgentId": "seed_agent_1_1",
+      "otherProfileAgentId": "seed_agent_1_2",
+      "eventId": "seed_event_founder_salon",
+      "summary": "Ada and Kwame already built rapport around real climate pilot deployment.",
+      "usefulnessScore": 5,
+      "followUpState": "warm",
+      "createdAt": "2026-04-02T15:37:29.138Z"
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "recommendation_497eb03b",
+      "eventId": "seed_event_founder_salon",
+      "requesterProfileAgentId": "seed_agent_1_1",
+      "recommendedProfileAgentId": "seed_agent_1_2",
+      "rank": 1,
+      "reason": "shared interests; existing context from a prior interaction",
+      "score": 35,
+      "createdAt": "2026-04-02T15:37:31.381Z"
+    },
+    {
+      "id": "recommendation_81091388",
+      "eventId": "seed_event_founder_salon",
+      "requesterProfileAgentId": "seed_agent_1_1",
+      "recommendedProfileAgentId": "seed_agent_1_3",
+      "rank": 2,
+      "reason": "strong fit for this event's founders and operators theme",
+      "score": 6,
+      "createdAt": "2026-04-02T15:37:31.381Z"
+    },
+    {
+      "id": "recommendation_b4263e99",
+      "eventId": "seed_event_founder_salon",
+      "requesterProfileAgentId": "seed_agent_1_1",
+      "recommendedProfileAgentId": "seed_agent_1_5",
+      "rank": 3,
+      "reason": "strong fit for this event's founders and operators theme",
+      "score": 6,
+      "createdAt": "2026-04-02T15:37:31.381Z"
+    }
+  ],
+  "debriefs": [],
+  "analyticsEvents": [
+    {
+      "id": "analytics_43977dcd",
+      "eventName": "recommendations_requested",
+      "eventId": "seed_event_founder_salon",
+      "profileAgentId": "seed_agent_1_1",
+      "payload": {
+        "count": 3,
+        "query": "Who should this agent meet next?"
+      },
+      "createdAt": "2026-04-02T15:37:31.381Z"
+    }
+  ]
+}

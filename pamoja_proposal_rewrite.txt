@@ -1,0 +1,125 @@
+PAMOJA
+Agent-Based Social Navigation
+Akonkwa Mubagwa - Harvard / Oluwatise - MIT / March 2026
+
+Your network has always been a map, frozen in time.
+Pamoja turns it into a living system that remembers, reasons, and acts.
+
+PROBLEM / USER
+People attend high-value events, classes, and community gatherings with almost no intelligent support for navigating who to meet, why they matter, or how one event connects to the next. Existing products like LinkedIn, Luma, and Eventbrite provide static profiles, attendance lists, and fragmented messaging, but they do not accumulate social context over time.
+
+This matters most in recurring communities such as venture studios, learning cohorts, founder networks, alumni groups, and professional communities, where the same people interact repeatedly but the system never gets smarter. Valuable connections are left to luck, memory decays immediately after events, and follow-up is weak or nonexistent.
+
+Core user question:
+"Who here should I meet, given who I am, what I want, and what has already happened across this community?"
+
+WHY THIS MATTERS
+The most important relationships in communities, co-founders, collaborators, mentors, early customers, often emerge through repeated context, not one-off introductions. Today that context is lost. A system that can retain and reason over social context across events can make serendipity systematic, improve follow-up quality, and increase the value of every recurring community.
+
+WHY AGENTIC (NOT A NORMAL APP)
+A normal app can store attendee lists, bios, and notes. It cannot continuously reason across a person's goals, event context, prior interactions, and evolving community history to decide what matters now and what should happen next.
+
+Pamoja is agentic because:
+- Each user is represented by a persistent dormant Profile Agent with memory, goals, preferences, and callable workflows.
+- Each event is represented by an Event Agent that understands the event's attendees, themes, and current social context.
+- When invoked, a Profile Agent can query one or more Event Agents, retrieve relevant memory, reason about relevance, and recommend concrete actions.
+- After an interaction or event debrief, the Profile Agent updates its memory so recommendations improve over time.
+
+A normal app shows a list. Pamoja can say:
+"Meet Maya first. She attended the same policy dinner, is now exploring adjacent problems in agent governance, and is likely to be a strong collaborator given your current goal."
+
+CORE IDEA + ARCHITECTURE
+Two agent types operate in one shared memory system:
+
+Profile Agents
+Persistent per-user agents that store identity, goals, interests, prior interactions, and relationship memory across events. They remain dormant until triggered by onboarding, a query, an event start, or a debrief.
+
+Event Agents
+Semi-persistent agents created for each event. They ingest the attendee list, event description, organizer context, and event-specific notes, then expose the event as a queryable social environment.
+
+Memory Layer
+Shared structured and semantic memory that stores event participation, interaction summaries, relationship notes, and learned preferences across time.
+
+Orchestration Layer
+Coordinates Profile Agent and Event Agent workflows: retrieve context, narrow relevant candidates, rank matches, generate explanations, and write updated memory after debrief.
+
+Interface
+A lightweight event-first web interface: claim your agent, ask "Who should I meet?", receive ranked recommendations with reasons, then debrief after the event.
+
+Architecture summary:
+User -> Profile Agent -> Orchestration Layer -> Event Agent -> Shared Memory
+                                           -> Ranked recommendations + reasoning
+                                           -> Debrief -> Memory update
+
+MVP LOOP
+Our MVP proves one narrow but important loop:
+
+1. Organizer uploads an attendee list and event metadata.
+2. The system creates draft Profile Agents for attendees.
+3. A user claims their agent and confirms a few fields: what they are working on, what they are looking for, and what kinds of people they want to meet.
+4. The user asks: "Who should I meet at this event?"
+5. Their Profile Agent queries the Event Agent, retrieves relevant cross-event memory, and returns 3 ranked people with specific reasons.
+6. After the event, the user debriefs who they met and what happened.
+7. The Profile Agent updates memory, improving future recommendations.
+
+MVP SUCCESS METRIC
+We will consider the MVP successful if a user can claim their agent and receive 3 relevant recommendations in under 90 seconds, and at least one recommendation is rated useful after the event debrief.
+
+WHY OUR TEAM / WHY NOW
+We are a Harvard-MIT team building for a setting we directly inhabit: recurring, high-context communities where the same people repeatedly gather but lack any intelligent social infrastructure. That makes us both builders and first users.
+
+This is also a timing advantage. Function-calling LLMs, lightweight orchestration frameworks, and practical memory systems now make it possible to build persistent but computationally efficient agents that wake up when needed, reason over context, and improve over time. That was far harder even 12-18 months ago.
+
+FEASIBILITY BY MVP DEADLINE
+We are explicitly scoping the MVP to one workflow and one environment: repeated cohort or class events.
+
+What we will build:
+- draft Profile Agent creation from roster and bio data
+- Profile Agent claim and confirmation flow
+- one Event Agent per event
+- one core query: "Who should I meet?"
+- ranked recommendations with explanations
+- a post-event debrief that writes back to memory
+
+What we will not build:
+- a full messaging platform
+- always-on autonomous agents
+- generalized multi-agent simulations
+- a full network graph explorer
+
+This is intentionally a narrow proof of the core agent loop, not a full social platform. That constraint is what makes the MVP both meaningful and realistic within the deadline.
+
+6-WEEK BUILD PLAN
+Weeks 1-2
+- Profile Agent schema, Event Agent schema, memory layer, organizer upload flow
+
+Weeks 3-4
+- agent claim flow, recommendation engine, Event Agent querying, lightweight web interface
+
+Weeks 5-6
+- debrief and memory writeback, live cohort testing, quality iteration, demo-ready end-to-end flow
+
+END-TO-END MVP DEMO
+An organizer uploads the attendee list for an upcoming class or event. A user scans a QR code, claims their draft Profile Agent, and answers three short questions. They then ask:
+"Who should I meet at this event?"
+
+Pamoja returns three people, ranked with reasons grounded in:
+- shared context
+- complementary goals or skills
+- prior event overlap
+- remembered interaction history when available
+
+After the event, the user records who they met and whether the recommendation was useful. That debrief updates the Profile Agent's memory so the next event is better than the last.
+
+WHAT MAKES IT INTERESTING
+Pamoja is not "AI for events." It is a new primitive for social navigation: persistent personal agents coordinating with contextual group agents through shared memory. The interesting part is not chat. It is that the system becomes more useful every time the same community interacts again.
+
+UNIQUE MOAT
+- Persistent agent memory: each Profile Agent becomes more valuable as it accumulates event history, preferences, and interaction outcomes.
+- Cross-event intelligence: incumbents treat events as isolated objects; Pamoja compounds context across time.
+- Closed-cohort cold start: our first deployment environment is unusually well-suited because the same people attend the same events repeatedly.
+- Data flywheel: every debrief strengthens future retrieval, ranking, and recommendations.
+- Agent-native architecture: competitors can copy attendee lists and messaging, but not a growing network of persistent user agents with event-aware memory.
+
+WHY THIS CAN WIN
+The strongest version of this product does not try to replace networking with a chatbot. It gives every person and every event an agent that can remember what matters, reason over evolving context, and help people build better relationships over time.

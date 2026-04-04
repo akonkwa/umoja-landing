@@ -1,0 +1,276 @@
+Conference Match Agent Build Procedure
+
+Goal
+Build an MVP that helps a conference attendee identify the best people to meet using:
+- a PDF export of their LinkedIn profile
+- a conference attendee list
+- explicit conference goals
+
+End-to-End MVP Flow
+1. User uploads LinkedIn PDF
+2. System parses and creates a draft user profile
+3. User confirms key fields and conference goals
+4. Organizer or user uploads attendee list
+5. User asks: "Who should I meet?"
+6. System returns top matches with reasons
+7. User logs who they met and what happened
+
+Step 1: Lock Scope
+Build:
+- LinkedIn PDF ingestion
+- profile confirmation flow
+- attendee list ingestion
+- one core matching query
+- ranked recommendations
+- post-meeting debrief
+
+Do not build:
+- messaging
+- email automation
+- conference-wide social graph
+- full CRM
+- multi-conference intelligence layer
+
+Step 2: Define Database Schema
+Create these tables:
+- users
+- user_profiles
+- conferences
+- conference_people
+- recommendations
+- meeting_feedback
+- parsed_documents
+
+Minimum fields:
+
+user_profiles
+- id
+- user_id
+- full_name
+- headline
+- current_company
+- current_role
+- past_experience
+- keywords
+- inferred_interests
+- conference_goal
+- desired_connections
+
+conference_people
+- id
+- conference_id
+- full_name
+- company
+- role
+- bio
+- tags
+- source_type
+
+recommendations
+- id
+- conference_id
+- user_profile_id
+- conference_person_id
+- rank
+- reason
+- score
+
+meeting_feedback
+- id
+- conference_id
+- user_profile_id
+- conference_person_id
+- status
+- notes
+- usefulness_rating
+
+Step 3: Build LinkedIn PDF Ingestion
+Input:
+- LinkedIn PDF
+
+Extract:
+- name
+- headline
+- company
+- role
+- work history
+- education
+- skills / keywords
+
+Important:
+- parsing will be imperfect
+- treat the output as a draft profile
+
+Deliverable:
+- upload endpoint
+- PDF parser
+- normalized profile object
+
+Step 4: Build Profile Confirmation Flow
+Ask user to confirm or edit:
+- current role
+- current company
+- key interests
+- conference goal
+- who they want to meet
+
+Example goals:
+- fundraising
+- hiring
+- partnerships
+- customers
+- learning
+- research collaboration
+
+Deliverable:
+- form UI
+- update endpoint
+
+Step 5: Build Conference Ingestion
+Allow organizer or user to upload:
+- attendee CSV
+- speaker list
+- sponsor list
+- optional agenda metadata
+
+Extract:
+- name
+- role
+- company
+- bio
+- category
+- tags
+
+Deliverable:
+- conference creation UI
+- attendee upload endpoint
+- normalized conference_people records
+
+Step 6: Build Matching Logic
+For each attendee, compute:
+- profile similarity
+- complementary fit
+- conference-goal relevance
+- strategic importance
+- shared topics or overlap
+
+Use a two-stage pipeline:
+1. structured filtering and scoring
+2. LLM explanation or final reranking
+
+Do not run the LLM over the entire attendee list.
+
+Deliverable:
+- scoring service
+- ranking service
+
+Step 7: Build Recommendation API
+Primary query:
+- "Who should I meet at this conference?"
+
+Response should return:
+- top 5 matches
+- one short reason per match
+- optional outreach angle
+
+Deliverable:
+- API route
+- typed response format
+
+Step 8: Build Recommendation UI
+Show:
+- name
+- company
+- role
+- why they matter
+- quick actions:
+  - save
+  - met
+  - not relevant
+
+Optional:
+- show priority level
+- show suggested opener
+
+Deliverable:
+- recommendation cards UI
+
+Step 9: Build Debrief Flow
+After a meeting, ask:
+- did you meet this person?
+- was this useful?
+- what did you discuss?
+- should we remember this for future conferences?
+
+Write back:
+- usefulness score
+- short meeting summary
+- updated match quality signal
+
+Deliverable:
+- debrief form
+- save endpoint
+
+Step 10: Add Basic Memory
+For MVP, memory only needs to store:
+- prior useful matches
+- prior meeting summaries
+- user preferences
+- repeated signal about what kinds of people are useful
+
+Deliverable:
+- memory writeback logic
+- retrieval for future matching
+
+Step 11: Add Analytics
+Track:
+- upload completion rate
+- profile confirmation completion rate
+- time to first recommendation
+- saved recommendation rate
+- met recommendation rate
+- usefulness rating
+
+Deliverable:
+- analytics events
+- basic admin dashboard or logs
+
+Step 12: Pilot the MVP
+Run with one real event or simulated conference.
+
+Test:
+- does the LinkedIn PDF parse well enough?
+- do users trust the match reasons?
+- are recommendations better than scanning the attendee list manually?
+
+Deliverable:
+- pilot notes
+- bug list
+- improvement priorities
+
+Step 13: Improve Recommendation Quality
+Focus improvement efforts on:
+- cleaner parsing
+- stronger goal capture
+- better attendee tagging
+- sharper explanation quality
+
+Do not spend early effort on visual polish before recommendation quality is good.
+
+Step 14: Prepare Demo
+Demo script:
+1. Upload LinkedIn PDF
+2. Confirm profile
+3. Upload conference attendee list
+4. Ask: "Who should I meet?"
+5. Show top 5 people with reasons
+6. Log one post-meeting debrief
+
+Success Condition
+The product works if users say:
+"These are better people than I would have found by scanning the attendee list myself."
+
+If that is not true, improve the matching logic before adding features.
+
+Prompt To Start A Clean Build Thread
+"We are building a Conference Match Agent MVP. The product ingests a LinkedIn PDF, asks the user to confirm their profile and conference goals, ingests a conference attendee list, and returns the best people to meet with reasons. Build step by step. Do not add messaging, graph views, or advanced autonomy until the core recommendation loop works. Prioritize parsing quality, goal capture, ranking quality, and fast onboarding."

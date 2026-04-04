@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@page {
+  size: letter;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #1e1b4b;
+  background: #ffffff;
+  width: 8.5in;
+  min-height: 11in;
+  max-height: 11in;
+  overflow: hidden;
+  padding: 0.35in 0.5in 0.3in 0.5in;
+}
+
+/* ── HEADER ── */
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  background: linear-gradient(135deg, #6D28D9, #7C3AED, #6366F1, #3B82F6, #0EA5E9, #06B6D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1px;
+}
+
+.subtitle {
+  font-size: 10px;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.team {
+  font-size: 8px;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+/* ── TAGLINE BAR ── */
+.tagline-bar {
+  background: linear-gradient(135deg, #7C3AED, #6366F1, #06B6D4);
+  color: white;
+  text-align: center;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 9px;
+  font-style: italic;
+  font-weight: 400;
+  margin: 8px 0 12px 0;
+  letter-spacing: 0.3px;
+}
+
+/* ── TWO COLUMNS ── */
+.columns {
+  display: flex;
+  gap: 20px;
+}
+
+.col-left { flex: 1; }
+.col-right { flex: 1.08; }
+
+/* ── SECTION HEADERS ── */
+.section-title {
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 10px 0 4px 0;
+  padding-bottom: 2px;
+}
+
+.section-title.purple {
+  color: #7C3AED;
+  border-bottom: 1.5px solid #E9D5FF;
+}
+
+.section-title.cyan {
+  color: #06B6D4;
+  border-bottom: 1.5px solid #CFFAFE;
+}
+
+.section-title:first-child { margin-top: 0; }
+
+/* ── BODY TEXT ── */
+p.body {
+  font-size: 8px;
+  line-height: 1.45;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+/* ── BULLETS ── */
+.bullet {
+  font-size: 7.5px;
+  line-height: 1.4;
+  color: #334155;
+  padding-left: 12px;
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.bullet::before {
+  content: "\2022";
+  position: absolute;
+  left: 2px;
+  color: #7C3AED;
+  font-weight: bold;
+}
+
+.bullet.cyan::before { color: #06B6D4; }
+
+/* ── NUMBERED STEPS ── */
+.step {
+  font-size: 7.5px;
+  line-height: 1.4;
+  color: #334155;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 1px;
+}
+
+.step .num {
+  position: absolute;
+  left: 2px;
+  font-weight: 800;
+  color: #7C3AED;
+  font-size: 8px;
+}
+
+/* ── ARCHITECTURE IMAGE ── */
+.arch-img {
+  text-align: center;
+  margin: 6px 0 4px 0;
+}
+
+.arch-img img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 4px;
+  border: 1px solid #E2E8F0;
+}
+
+/* ── BUILD / WON'T BUILD ── */
+.build-block {
+  font-size: 7.5px;
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+
+.build-block .label {
+  font-weight: 700;
+  color: #06B6D4;
+}
+
+.build-block .label.gray {
+  color: #94a3b8;
+}
+
+.build-block span {
+  color: #475569;
+}
+
+/* ── SUCCESS METRIC ── */
+.metric-box {
+  background: #F5F3FF;
+  border-left: 3px solid #7C3AED;
+  padding: 5px 10px;
+  border-radius: 0 4px 4px 0;
+  font-size: 7.5px;
+  color: #4338CA;
+  margin: 4px 0;
+  font-weight: 500;
+}
+
+/* ── FOOTER BAR ── */
+.footer-bar {
+  background: linear-gradient(135deg, #4338CA, #6D28D9);
+  color: white;
+  text-align: center;
+  padding: 6px 20px;
+  border-radius: 6px;
+  font-size: 7.5px;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+.footer-bar .sep {
+  color: #A78BFA;
+  margin: 0 8px;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">PAMOJA</div>
+  <div class="subtitle">Agent-Based Social Navigation</div>
+  <div class="team">Akonkwa Mubagwa (Harvard) &nbsp;|&nbsp; Oluwatise (MIT) &nbsp;|&nbsp; MIT AI Venture Studio 2026</div>
+</div>
+
+<!-- TAGLINE -->
+<div class="tagline-bar">
+  Your network has always been a map - frozen in time. Pamoja turns it into a living system that remembers, reasons, and acts.
+</div>
+
+<!-- TWO COLUMNS -->
+<div class="columns">
+
+  <!-- LEFT COLUMN -->
+  <div class="col-left">
+
+    <div class="section-title purple">Problem / User</div>
+    <p class="body">People attend high-value events, classes, and recurring community gatherings with no intelligent support for navigating who to meet, why they matter, or how one event connects to the next. Existing tools provide static profiles and attendance lists but do not accumulate social context over time. Valuable connections are left to luck.</p>
+
+    <div class="section-title purple">Why Agentic</div>
+    <div class="bullet">Each user is represented by a persistent Profile Agent with memory, goals, and callable workflows</div>
+    <div class="bullet">Each event is represented by an Event Agent that understands attendees, themes, and context</div>
+    <div class="bullet">Profile Agents query Event Agents, retrieve cross-event memory, rank who matters, and recommend concrete actions</div>
+    <div class="bullet">After debrief, the Profile Agent updates memory so recommendations improve over time</div>
+
+    <div class="section-title purple">MVP Loop</div>
+    <div class="step"><span class="num">1.</span> Organizer uploads an attendee list and event metadata</div>
+    <div class="step"><span class="num">2.</span> The system creates draft Profile Agents for attendees</div>
+    <div class="step"><span class="num">3.</span> User claims their agent and confirms: working on / looking for / want to meet</div>
+    <div class="step"><span class="num">4.</span> User asks: "Who should I meet at this event?"</div>
+    <div class="step"><span class="num">5.</span> Profile Agent queries Event Agent, retrieves cross-event memory, returns 3 ranked people with reasons</div>
+    <div class="step"><span class="num">6.</span> After the event, user debriefs who they met and what happened</div>
+    <div class="step"><span class="num">7.</span> Profile Agent updates memory, improving future recommendations</div>
+
+    <div class="section-title purple">Success Metric</div>
+    <div class="metric-box">User receives 3 relevant recommendations in under 90 seconds. At least one recommendation is rated useful after the event debrief.</div>
+
+    <div class="section-title purple">Why This Matters</div>
+    <p class="body">The most important relationships in communities - co-founders, collaborators, mentors, early customers - emerge through repeated context, not one-off introductions. A system that retains and reasons over social context across events can make serendipity systematic.</p>
+
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="col-right">
+
+    <div class="section-title cyan">Architecture</div>
+    <div class="arch-img">
+      <img src="/Users/akonkwamubagwa/Documents/00 Claude MIT/pamoja-architecture.png" />
+    </div>
+
+    <div class="section-title cyan">Why Us / Why Now</div>
+    <p class="body">We are building for a setting we directly inhabit: recurring Harvard/MIT cohort-style communities where the same people repeatedly gather but lack intelligent social infrastructure. Function-calling LLMs, lightweight orchestration frameworks, and practical memory systems now make persistent but computationally efficient agents feasible.</p>
+
+    <div class="section-title cyan">Feasibility by Deadline</div>
+    <div class="build-block">
+      <span class="label">Build: </span><span>Profile Agent creation from roster, claim/confirm flow, one Event Agent per event, one core query ("Who should I meet?"), ranked recommendations with explanations, post-event debrief with memory writeback</span>
+    </div>
+    <div class="build-block">
+      <span class="label gray">Won't build: </span><span style="color:#94a3b8;">full messaging platform, always-on autonomous agents, full graph explorer, generalized multi-agent simulations</span>
+    </div>
+
+    <div class="section-title cyan">Unique Moat</div>
+    <div class="bullet cyan">Persistent agent memory compounds in value over time</div>
+    <div class="bullet cyan">Cross-event intelligence is missing from all incumbents</div>
+    <div class="bullet cyan">Closed-cohort deployment solves cold start on day one</div>
+    <div class="bullet cyan">Every debrief strengthens future retrieval, ranking, and recommendations</div>
+
+    <div class="section-title cyan">Platform Vision</div>
+    <p class="body">Pamoja is the agentic social layer for any recurring community - alumni networks, professional cohorts, conference circuits, housing co-ops, religious communities. A decentralized successor to static WhatsApp groups, where your agent carries your social memory across every group you belong to.</p>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-bar">
+  <strong>PAMOJA</strong>
+  <span class="sep">|</span>
+  Developed @ MIT Media Lab
+  <span class="sep">|</span>
+  pamoja.mit.edu
+</div>
+
+</body>
+</html>

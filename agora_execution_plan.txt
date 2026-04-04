@@ -1,0 +1,449 @@
+Agora Execution Plan
+
+Purpose
+This document breaks Agora into modular building blocks so it can be developed incrementally and handed to an AI coding assistant one module at a time. The goal is not to build a full messaging platform first. The goal is to prove the core agent value: helping people navigate who to meet at an event, capturing what happened, and improving future recommendations through memory.
+
+High-Level Product Thesis
+Agora should be built as an event-first social navigation system with agentic reasoning, not as a Telegram clone. The product should feel simple on the surface:
+
+1. A user receives an event link or QR code.
+2. The system creates a draft profile agent.
+3. The user confirms a few fields.
+4. The user asks, "Who should I meet?"
+5. The system recommends people with clear reasons.
+6. After the event, the user debriefs.
+7. The system updates memory for future events.
+
+Core Architecture Principle
+Do not model this as 20,000 autonomous agents running all the time.
+Model it as:
+
+- 20,000 user profiles
+- event records
+- memory summaries
+- on-demand recommendation workflows
+
+This keeps compute and cost manageable.
+
+Scalability and Compute View
+20,000 onboarded users is manageable if the system is designed correctly.
+
+What is cheap:
+- storing profiles
+- storing event attendance
+- storing structured metadata
+- storing embeddings for profiles and notes
+- normal database and web app infrastructure
+
+What gets expensive:
+- large LLM calls on every interaction
+- full-agent simulations running continuously
+- pairwise matching across all users
+- constantly re-computing recommendations for everyone
+
+Recommended scaling pattern:
+1. Filter candidate pool to users in the same event or community.
+2. Narrow to top 50-200 candidates using structured filters and embeddings.
+3. Re-rank top 10-20 candidates.
+4. Use an LLM only to explain the top 3-5 recommendations.
+
+Core Product Decision
+Primary proof for the MVP:
+Users will ask useful social-navigation questions and get recommendations that feel clearly better than a static attendee list.
+
+Secondary proof:
+Users will return after the event to debrief, which allows the system to improve future recommendations through memory.
+
+Recommended MVP Interface
+Best near-term interface:
+Text-first, Partiful-style onboarding with a lightweight web chat and one small visual layer.
+
+Why:
+- fastest path to user activation
+- aligned with the event wedge
+- lowest product surface area
+- keeps the team focused on intelligence and memory rather than messaging infrastructure
+
+Do not build:
+- a full Telegram-like product for the MVP
+- a custom messaging platform with heavy social graph exploration
+
+Use Telegram only if the target users already actively coordinate there.
+
+Modular Building Blocks
+
+Module 1: Identity and Access
+Purpose:
+Allow users to sign in, claim a draft profile, and connect to an event/community.
+
+Inputs:
+- email / magic link / OAuth
+- invite link / event QR code
+
+Outputs:
+- user_id
+- event_id
+- community_id
+
+Dependencies:
+- none
+
+What to build first:
+- magic link sign-in
+- event invite token
+- profile claim step
+
+Module 2: Profile Drafting Service
+Purpose:
+Generate a draft profile from organizer upload, registration data, bio, LinkedIn, or prior records.
+
+Inputs:
+- attendee roster
+- bio / LinkedIn / registration form
+- event metadata
+
+Outputs:
+- draft profile
+- inferred interests/tags
+- missing fields list
+- confidence scores
+
+Dependencies:
+- organizer upload
+- profile schema
+
+Key product insight:
+Do not ask users to build their agent from scratch. Draft it first, then let them confirm or edit it.
+
+Module 3: Onboarding and Profile Confirmation
+Purpose:
+Confirm the minimum fields needed to make recommendations useful.
+
+Minimum fields:
+- name
+- role / affiliation
+- interests
+- current goal
+- who they want to meet at this event
+- consent for memory
+
+Auto-filled:
+- name
+- role
+- affiliation
+- event attendance overlap
+- imported bio
+- inferred tags
+
+Manual:
+- current goal
+- what they are looking for today
+- desired connections
+- memory consent
+- corrections to wrong inferred fields
+
+Dependencies:
+- profile drafting service
+
+Activation target:
+Users should be able to claim a profile and ask one useful question in under 90 seconds.
+
+Module 4: Event Context Layer
+Purpose:
+Represent the current event and its attendee pool in a way that recommendation workflows can use.
+
+Inputs:
+- event metadata
+- attendee list
+- event tags/themes
+
+Outputs:
+- attendee pool
+- event context
+- event-theme embeddings or structured tags
+
+Dependencies:
+- organizer tools
+
+Module 5: Recommendation Engine
+Purpose:
+Generate ranked suggestions for who a user should meet.
+
+Core question:
+"Who should I meet at this event?"
+
+Inputs:
+- current user profile
+- event context
+- prior memory
+- user intent for the current event
+
+Outputs:
+- ranked list of recommended people
+- short explanation for each recommendation
+- confidence / relevance score
+
+Suggested logic:
+1. Filter by this event.
+2. Filter by structured fit: goals, role, interests, shared themes.
+3. Use embeddings or semantic retrieval to narrow candidates.
+4. Re-rank and generate reasons.
+
+Dependencies:
+- profile module
+- event context layer
+- memory layer
+
+Module 6: Chat and Query Layer
+Purpose:
+Provide a simple surface where the user can ask questions and receive recommendations.
+
+Supported MVP questions:
+- Who should I meet?
+- Who works on adjacent problems to mine?
+- Who should I follow up with from last time?
+
+Outputs:
+- direct answer
+- recommendation cards
+- explanation text
+
+Dependencies:
+- recommendation engine
+
+MVP constraint:
+This should be a lightweight web chat, not a full messaging product.
+
+Module 7: Debrief and Memory Update
+Purpose:
+Capture what happened after the event and write back useful memory for future recommendations.
+
+Inputs:
+- who the user met
+- whether the recommendation was useful
+- discussion summary
+- follow-up preference
+
+Outputs:
+- updated memory summary
+- relationship notes
+- stronger future retrieval context
+
+Dependencies:
+- recommendation engine
+- profile and memory schemas
+
+Why it matters:
+This is what turns the system from a one-shot recommender into a compounding product.
+
+Module 8: Admin and Organizer Tools
+Purpose:
+Give organizers a way to upload rosters, create events, and monitor participation.
+
+Inputs:
+- CSV or manual roster entry
+- event metadata
+
+Outputs:
+- event creation
+- attendee records
+- invite links / QR codes
+- onboarding analytics
+
+Dependencies:
+- event context layer
+- identity layer
+
+Recommended Build Order
+
+Phase 1: Foundation
+- define profile schema
+- define event schema
+- define memory schema
+- build organizer upload flow
+- build sign-in and invite handling
+
+Phase 2: Activation Loop
+- generate draft profiles
+- build profile claim and confirmation flow
+- build recommendation API for "Who should I meet?"
+- build a simple result card UI
+
+Phase 3: Feedback Loop
+- build post-event debrief flow
+- store structured debrief summaries
+- use that data in future recommendations
+
+Phase 4: UX Legibility
+- add lightweight web chat
+- add shared-context cards
+- add event badges / overlap view
+
+Phase 5: Scale and Quality
+- caching
+- batching
+- async jobs
+- evaluation framework
+- recommendation quality monitoring
+
+Smallest Useful Visual Layer
+Do not build a full graph explorer for the MVP.
+
+Build one constrained visual component:
+- recommended person card
+- shared context badge(s)
+- prior event overlap
+- short "why this person" explanation
+
+This is enough to make the intelligence visible without exploding scope.
+
+Suggested Data Model
+
+User:
+- user_id
+- name
+- role
+- affiliation
+- bio
+- interests
+- current goals
+- consent_for_memory
+
+Event:
+- event_id
+- community_id
+- title
+- date
+- description
+- tags
+
+Attendance:
+- user_id
+- event_id
+- RSVP status
+- attendance status
+
+ProfileMemory:
+- memory_id
+- user_id
+- summary
+- structured tags
+- last_updated
+
+InteractionMemory:
+- interaction_id
+- user_id
+- other_user_id
+- event_id
+- summary
+- usefulness_score
+- follow_up_state
+
+RecommendationLog:
+- recommendation_id
+- user_id
+- event_id
+- recommended_user_id
+- reason
+- score
+- clicked / saved / dismissed / met
+
+Success Metrics
+
+Experiment 1: Zero-graph text-first onboarding
+Test:
+Can users claim a profile and ask one useful question in under 90 seconds?
+
+Success metric:
+- at least 60% complete onboarding and ask a question within 90 seconds
+
+Experiment 2: Ranked people cards with reasoning
+Test:
+Does showing 3 ranked people with reasons increase trust?
+
+Success metric:
+- at least 70% of test users mark at least one recommendation as useful or very useful
+
+Experiment 3: Mini visual layer
+Test:
+Does a small overlap/shared-context panel improve comprehension?
+
+Success metric:
+- users can correctly explain why someone was recommended without extra prompting
+
+Experiment 4: Web chat vs Telegram
+Test:
+Do users ask more useful questions in a dedicated web chat or in Telegram?
+
+Success metric:
+- higher completion rate and lower drop-off in the first question flow
+
+Biggest Risks
+
+Biggest product risk:
+The recommendations feel generic, so users see no meaningful advantage over reading an attendee list.
+
+Biggest technical risk:
+Sparse or messy source data leads to weak matching and weak explanations.
+
+7-Day Execution Plan for Onboarding
+
+Day 1:
+- lock MVP scope
+- define schemas for user, event, memory, and recommendations
+
+Day 2:
+- build organizer attendee upload
+- create draft profiles automatically
+
+Day 3:
+- build claim flow from QR/link
+- show prefilled profile
+- allow edits to 3-5 fields
+
+Day 4:
+- build recommendation API for "Who should I meet?"
+- return top 3 people with reasons
+
+Day 5:
+- build a simple UI for recommendation cards and shared context badges
+
+Day 6:
+- build post-event debrief form
+- store memory summaries
+
+Day 7:
+- run a live test
+- measure time-to-value
+- tighten onboarding and recommendation quality
+
+How to Hand This to an AI Coding Assistant
+Do not ask the AI to "build Agora."
+Ask it to build these modules in order:
+
+1. profile schema + event schema + memory schema
+2. organizer upload flow
+3. draft profile generation service
+4. profile claim / confirmation UI
+5. recommendation API
+6. simple recommendation cards UI
+7. debrief form and memory writeback
+8. organizer/admin dashboard
+
+Final Recommendation
+Build Agora as a retrieval + ranking + explanation system with memory, wrapped in a simple event-first interface.
+
+Do not over-invest in:
+- messaging infrastructure
+- always-on agents
+- full graph visualization
+- generalized multi-agent simulations
+
+Invest in:
+- strong draft profiles
+- fast onboarding
+- recommendation quality
+- clean explanations
+- useful debrief capture
+
+That is the highest signal-to-effort path for an MVP and the best modular structure for vibecoding with AI.

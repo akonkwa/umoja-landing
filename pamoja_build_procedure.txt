@@ -1,0 +1,423 @@
+PAMOJA App Build Procedure
+
+Purpose
+This document is a step-by-step procedure for building the PAMOJA MVP as a modular agentic product. It is written to be used as the starting brief in a clean implementation thread.
+
+Build Goal
+Build a working MVP where:
+1. An organizer uploads an attendee list for an event.
+2. The system creates draft Profile Agents for attendees.
+3. A user claims their Profile Agent and confirms a few fields.
+4. The user asks: "Who should I meet at this event?"
+5. The system returns 3 ranked recommendations with reasons.
+6. After the event, the user debriefs who they met.
+7. The Profile Agent updates memory for the next event.
+
+Core Architecture Principle
+Treat each user as a persistent dormant Profile Agent with:
+- identity
+- goals
+- preferences
+- relationship memory
+- event history
+- callable workflows
+
+Treat each event as an Event Agent with:
+- attendee list
+- event metadata
+- themes
+- event-specific notes
+
+Agents do not run continuously. They wake up only when triggered by onboarding, a query, or a debrief.
+
+Recommended Stack
+- Frontend: Next.js or simple React app
+- Backend API: FastAPI or Next.js API routes
+- Database: Postgres
+- Vector store: pgvector or ChromaDB
+- Auth: magic link or simple email auth
+- LLM: OpenAI API
+- Orchestration: lightweight workflow layer, not a heavy multi-agent framework at first
+
+Step 1: Define the MVP Boundaries
+Before writing code, lock the scope.
+
+Build:
+- organizer upload
+- draft Profile Agent creation
+- profile claim flow
+- one Event Agent per event
+- one core query: "Who should I meet?"
+- recommendation explanations
+- post-event debrief
+- memory writeback
+
+Do not build:
+- full messaging platform
+- full social graph explorer
+- always-on agents
+- autonomous background negotiation
+- generalized multi-agent runtime
+
+Deliverable:
+- one written MVP scope document with in-scope and out-of-scope features
+
+Step 2: Define the Data Model
+Create the minimum database schema.
+
+Tables:
+- users
+- communities
+- events
+- event_attendees
+- profile_agents
+- event_agents
+- profile_memory
+- interaction_memory
+- recommendations
+- debriefs
+
+Minimum fields:
+
+users
+- id
+- email
+- name
+- affiliation
+
+events
+- id
+- community_id
+- title
+- description
+- start_at
+- location
+- tags
+
+profile_agents
+- id
+- user_id
+- draft_status
+- bio
+- interests
+- goals
+- looking_for
+- preferences
+- memory_summary
+
+event_agents
+- id
+- event_id
+- summary
+- themes
+
+interaction_memory
+- id
+- profile_agent_id
+- other_profile_agent_id
+- event_id
+- summary
+- usefulness_score
+- follow_up_state
+
+recommendations
+- id
+- event_id
+- requester_profile_agent_id
+- recommended_profile_agent_id
+- rank
+- reason
+- score
+
+debriefs
+- id
+- event_id
+- profile_agent_id
+- met_people
+- notes
+- usefulness_rating
+
+Deliverable:
+- schema file and migration
+
+Step 3: Build Organizer Input
+Create the organizer workflow first.
+
+Features:
+- create event
+- upload CSV attendee list
+- optionally add short bios or metadata
+- store attendees linked to event
+
+System behavior:
+- each attendee record should trigger creation of a draft Profile Agent shell
+
+Deliverable:
+- organizer dashboard page
+- CSV upload endpoint
+- event creation form
+
+Step 4: Build Draft Profile Agent Creation
+After attendee upload, generate a draft Profile Agent.
+
+Inputs:
+- attendee name
+- affiliation
+- imported bio
+- event metadata
+
+Auto-fill:
+- name
+- affiliation
+- draft bio
+- inferred interests
+- event association
+
+Do not overcomplicate this step.
+Use simple extraction and tagging first.
+
+Deliverable:
+- profile-agent creation service
+- draft profile preview object
+
+Step 5: Build the Profile Claim Flow
+This is the activation gate.
+
+User flow:
+1. User opens event invite link or QR code.
+2. System identifies or lets them claim their draft Profile Agent.
+3. User confirms or edits:
+   - what they are working on
+   - what they are looking for
+   - what kind of people they want to meet
+4. User consents to memory usage.
+
+Success target:
+- user completes claim flow in under 90 seconds
+
+Deliverable:
+- claim page
+- edit form
+- submit handler
+
+Step 6: Build the Event Agent
+Each event should have a structured Event Agent object.
+
+Responsibilities:
+- hold attendee list
+- hold event themes
+- hold event context
+- support retrieval for recommendation queries
+
+For MVP, the Event Agent can be implemented as a structured service layer rather than a complex autonomous process.
+
+Deliverable:
+- event-agent builder
+- event-agent read service
+
+Step 7: Build the Memory Layer
+Create the first version of persistent memory.
+
+Store:
+- event attendance
+- prior recommendations
+- debrief summaries
+- interaction summaries
+- explicit preferences
+
+Split memory into:
+- structured memory in Postgres
+- semantic memory in vector storage for retrieval
+
+Deliverable:
+- memory write functions
+- memory retrieval functions
+- embedding pipeline for relevant text fields
+
+Step 8: Build the Recommendation Pipeline
+This is the core intelligence loop.
+
+Input:
+- current Profile Agent
+- current Event Agent
+- prior memory
+
+Procedure:
+1. Filter to attendees at the current event.
+2. Exclude the current user.
+3. Use structured matching:
+   - shared interests
+   - complementary skills
+   - stated goals
+   - prior overlap
+4. Use semantic retrieval to narrow top candidates.
+5. Rank top candidates.
+6. Generate 3 recommendation reasons.
+
+Important:
+- do not use an LLM on the full attendee list
+- narrow candidates first
+- use LLM mainly for explanation and final re-ranking
+
+Deliverable:
+- recommendation service
+- scoring logic
+- explanation generator
+
+Step 9: Build the Core Query API
+Implement the first user-facing query.
+
+Primary query:
+- "Who should I meet at this event?"
+
+API response should return:
+- top 3 recommended people
+- one reason per person
+- optional confidence or score
+
+Deliverable:
+- API endpoint
+- typed response schema
+
+Step 10: Build the User Interface
+Keep the frontend simple.
+
+Pages:
+- organizer event setup
+- profile claim page
+- event home page
+- recommendation view
+- debrief page
+
+Recommendation UI should show:
+- person name
+- short descriptor
+- why they were recommended
+- action buttons:
+  - save
+  - met them
+  - not relevant
+
+Deliverable:
+- frontend screens wired to live APIs
+
+Step 11: Build Post-Event Debrief
+This is what makes the product compound.
+
+Ask:
+- who did you meet?
+- was the recommendation useful?
+- what did you discuss?
+- do you want a follow-up reminder?
+
+Write back:
+- interaction summary
+- usefulness score
+- updated relationship note
+- updated memory summary
+
+Deliverable:
+- debrief form
+- debrief save endpoint
+- memory update job
+
+Step 12: Add Logging and Evaluation
+You need evidence that the system works.
+
+Track:
+- claim-flow completion rate
+- time to first recommendation
+- recommendation click/save rate
+- recommendation usefulness rating
+- debrief completion rate
+
+MVP success metric:
+- a user can claim their agent and receive 3 relevant recommendations in under 90 seconds
+- at least one recommendation is rated useful after debrief
+
+Deliverable:
+- analytics events
+- simple dashboard or logs
+
+Step 13: Run an Internal Pilot
+Test with a small real cohort.
+
+Ideal pilot:
+- 10 to 30 people
+- one real event
+- one organizer
+- one debrief cycle
+
+Observe:
+- where users get stuck
+- whether recommendations feel generic
+- whether the reasons feel believable
+- whether memory actually improves next-event output
+
+Deliverable:
+- pilot report with issues and improvements
+
+Step 14: Improve Recommendation Quality
+After first pilot, iterate on the real bottleneck.
+
+Focus on:
+- better candidate filtering
+- cleaner profile inputs
+- stronger explanation quality
+- better memory summaries
+
+Do not spend early cycles polishing visual complexity before fixing recommendation quality.
+
+Deliverable:
+- version 2 recommendation logic
+
+Step 15: Prepare the Demo
+Build the demo around one exact flow.
+
+Demo script:
+1. Organizer uploads event attendees.
+2. User claims draft Profile Agent.
+3. User asks: "Who should I meet?"
+4. System returns 3 recommendations with reasons.
+5. User debriefs after meeting one person.
+6. System shows updated memory for future events.
+
+Deliverable:
+- seeded demo dataset
+- stable demo account
+- stable demo event
+
+Step 16: Defer These Until After MVP
+Do not build these before the core loop works:
+- real-time messaging
+- large graph visualization
+- cross-community roaming
+- autonomous follow-up agents
+- multi-agent negotiation between many profile agents
+- heavy background orchestration
+
+Development Order Summary
+1. MVP scope document
+2. database schema
+3. organizer upload
+4. draft Profile Agent generation
+5. profile claim flow
+6. Event Agent service
+7. memory layer
+8. recommendation engine
+9. query API
+10. user recommendation UI
+11. debrief flow
+12. analytics and evaluation
+13. pilot
+14. recommendation quality improvements
+15. demo packaging
+
+How to Use This in a Clean AI Build Thread
+Paste this instruction:
+
+"We are building the PAMOJA MVP as an agentic event-social-navigation app. Follow the build procedure step by step. Do not jump ahead to advanced features. Build only the next missing step, keep the architecture modular, and preserve the model that each user is a persistent dormant Profile Agent and each event is an Event Agent. Prioritize recommendation quality, onboarding speed, and memory writeback over visual complexity."
+
+Final Rule
+The product is only working if the recommendation feels meaningfully better than a static attendee list.
+If that is not true, stop adding features and improve the core intelligence loop first.

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAMOJA One Page Polished</title>
+  <style>
+    :root {
+      --bg: #eef3f9;
+      --paper: #ffffff;
+      --ink: #1d2733;
+      --muted: #5b6777;
+      --navy: #132238;
+      --blue: #4f5dde;
+      --purple: #8b5cf6;
+      --teal: #17a2c6;
+      --green: #24b36b;
+      --orange: #e67e22;
+      --soft: #f4f7fb;
+      --shadow: 0 10px 28px rgba(19, 34, 56, 0.12);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, #dfe9f7 0, transparent 28%),
+        linear-gradient(180deg, #edf2f8 0%, #e7edf5 100%);
+      color: var(--ink);
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .toolbar {
+      max-width: 1180px;
+      margin: 0 auto 16px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .toolbar__note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .toolbar__actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--navy);
+      color: white;
+    }
+
+    button.secondary {
+      background: white;
+      color: var(--navy);
+      box-shadow: inset 0 0 0 1px rgba(19, 34, 56, 0.12);
+    }
+
+    .canvas {
+      position: relative;
+      width: 1180px;
+      height: 1660px;
+      margin: 0 auto;
+      background: var(--paper);
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(19, 34, 56, 0.15);
+      overflow: hidden;
+    }
+
+    .block {
+      position: absolute;
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px 16px;
+      cursor: grab;
+      user-select: none;
+      touch-action: none;
+    }
+
+    .block.dragging {
+      cursor: grabbing;
+      z-index: 999;
+      box-shadow: 0 20px 45px rgba(19, 34, 56, 0.22);
+    }
+
+    .block.soft {
+      background: var(--soft);
+      box-shadow: none;
+    }
+
+    .title-block {
+      box-shadow: none;
+      background: transparent;
+      padding: 0;
+    }
+
+    .title {
+      font-size: 52px;
+      line-height: 1;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+      margin: 0;
+    }
+
+    .subtitle {
+      margin: 8px 0 4px;
+      font-size: 20px;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .meta {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .tagline {
+      font-size: 17px;
+      line-height: 1.45;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .section-header {
+      display: inline-block;
+      margin: 0 0 10px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .blue { background: var(--blue); }
+    .purple { background: var(--purple); }
+    .teal { background: var(--teal); }
+    .green { background: var(--green); }
+    .orange { background: var(--orange); }
+
+    p {
+      margin: 0 0 10px;
+      font-size: 15px;
+      line-height: 1.48;
+    }
+
+    ul, ol {
+      margin: 8px 0 0 18px;
+      padding: 0;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .architecture {
+      background: linear-gradient(135deg, #fbfdff 0%, #f4f7fb 100%);
+      border: 1px solid rgba(19, 34, 56, 0.06);
+    }
+
+    .architecture__row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .architecture__node {
+      border-radius: 12px;
+      padding: 12px 14px;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      min-width: 132px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(19, 34, 56, 0.1);
+    }
+
+    .architecture__node small {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      opacity: 0.92;
+    }
+
+    .architecture__user {
+      color: var(--navy);
+      background: #eff3f8;
+    }
+
+    .architecture__arrow {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .memory {
+      margin-top: 8px;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(36, 179, 107, 0.12);
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .footer-band {
+      background: var(--soft);
+      border: 1px solid rgba(19, 34, 56, 0.06);
+      text-align: center;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .coords {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      white-space: pre-wrap;
+      background: rgba(19, 34, 56, 0.04);
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 1240px) {
+      body {
+        padding: 12px;
+      }
+
+      .canvas {
+        width: 100%;
+        height: 1700px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="toolbar__note">
+      Drag any block to rearrange the page. Use “Dump Positions” to copy exact coordinates.
+    </div>
+    <div class="toolbar__actions">
+      <button class="secondary" id="reset-btn">Reset Layout</button>
+      <button id="dump-btn">Dump Positions</button>
+    </div>
+  </div>
+
+  <div class="canvas" id="canvas">
+    <section class="block title-block" data-id="title" data-x="42" data-y="34" style="left:42px;top:34px;width:620px;">
+      <h1 class="title">PAMOJA</h1>
+      <div class="subtitle">Agent-Based Social Navigation</div>
+      <p class="meta">Akonkwa Mubagwa (Harvard) / Oluwatise (MIT) / March 2026</p>
+    </section>
+
+    <section class="block soft" data-id="tagline" data-x="40" data-y="140" style="left:40px;top:140px;width:1100px;">
+      <div class="tagline">
+        Your network has always been a map, frozen in time. Pamoja turns it into a living system that remembers, reasons, and acts.
+      </div>
+    </section>
+
+    <section class="block architecture" data-id="architecture" data-x="40" data-y="220" style="left:40px;top:220px;width:1100px;">
+      <div class="section-header blue">Core Idea + Architecture</div>
+      <div class="architecture__row">
+        <div class="architecture__node architecture__user">User<small>claim / ask</small></div>
+        <div class="architecture__arrow">→</div>
+        <div class="architecture__node" style="background:var(--blue)">Profile Agent<small>persistent dormant agent</small></div>
+        <div class="architecture__arrow">↔</div>
+        <div class="architecture__node" style="background:var(--purple)">Orchestration<small>retrieve, rank, explain</small></div>
+        <div class="architecture__arrow">↔</div>
+        <div class="architecture__node" style="background:var(--teal)">Event Agent<small>attendees, themes, context</small></div>
+      </div>
+      <div class="memory">
+        <strong>Shared Memory</strong>: event participation, interaction summaries, relationship notes, and learned preferences across time.
+      </div>
+    </section>
+
+    <section class="block" data-id="problem" data-x="40" data-y="470" style="left:40px;top:470px;width:528px;">
+      <div class="section-header blue">Problem / User</div>
+      <p>
+        People attend high-value events, classes, and recurring community gatherings with almost no intelligent support for navigating who to meet, why they matter, or how one event connects to the next.
+      </p>
+      <p>
+        Existing tools provide static profiles and attendance lists, but do not accumulate social context over time.
+      </p>
+      <p><strong>Core user question:</strong> “Who here should I meet, given who I am, what I want, and what has already happened across this community?”</p>
+    </section>
+
+    <section class="block" data-id="matters" data-x="592" data-y="470" style="left:592px;top:470px;width:548px;">
+      <div class="section-header green">Why This Matters</div>
+      <p>
+        The most important relationships in communities, co-founders, collaborators, mentors, early customers, emerge through repeated context, not one-off introductions.
+      </p>
+      <p>
+        A system that retains and reasons over social context across events can make serendipity systematic.
+      </p>
+    </section>
+
+    <section class="block" data-id="agentic" data-x="40" data-y="720" style="left:40px;top:720px;width:528px;">
+      <div class="section-header purple">Why Agentic</div>
+      <p>
+        A normal app can store attendee lists, bios, and notes. It cannot reason across a person’s goals, event context, prior interactions, and evolving community history to decide what matters now and what should happen next.
+      </p>
+      <ul>
+        <li>Each user is a persistent dormant Profile Agent with memory, goals, and workflows.</li>
+        <li>Each event is an Event Agent that understands attendees, themes, and context.</li>
+        <li>Profile Agents query Event Agents, retrieve memory, rank who matters, and recommend actions.</li>
+        <li>After debrief, the Profile Agent updates memory so recommendations improve over time.</li>
+      </ul>
+    </section>
+
+    <section class="block" data-id="feasibility" data-x="592" data-y="650" style="left:592px;top:650px;width:548px;">
+      <div class="section-header orange">Feasibility + Metric</div>
+      <p>
+        We are intentionally scoping the MVP to one workflow and one environment: repeated cohort/class events.
+      </p>
+      <p>
+        <strong>We will build:</strong> draft Profile Agent creation, claim flow, one Event Agent per event, one core query, ranked explanations, and post-event memory writeback.
+      </p>
+      <p>
+        <strong>We will not build:</strong> a messaging platform, full graph explorer, always-on agents, or generalized multi-agent simulations.
+      </p>
+      <p>
+        <strong>MVP success metric:</strong> a user can claim their agent and receive 3 relevant recommendations in under 90 seconds, and at least one recommendation is rated useful after debrief.
+      </p>
+    </section>
+
+    <section class="block" data-id="mvp" data-x="40" data-y="1090" style="left:40px;top:1090px;width:528px;">
+      <div class="section-header teal">MVP Loop</div>
+      <ol>
+        <li>Organizer uploads attendees and event metadata.</li>
+        <li>The system creates draft Profile Agents.</li>
+        <li>User claims their agent and confirms three fields.</li>
+        <li>User asks: “Who should I meet at this event?”</li>
+        <li>Profile Agent returns 3 ranked people with reasons.</li>
+        <li>Post-event debrief updates memory for the next event.</li>
+      </ol>
+    </section>
+
+    <section class="block" data-id="why-us" data-x="592" data-y="1045" style="left:592px;top:1045px;width:548px;">
+      <div class="section-header blue">Why Us / Why Now</div>
+      <p>
+        We are building for a setting we directly inhabit: recurring Harvard/MIT cohort-style communities where the same people repeatedly gather but lack intelligent social infrastructure.
+      </p>
+      <p>
+        Function-calling LLMs, lightweight orchestration frameworks, and practical memory systems now make persistent but computationally efficient agents feasible.
+      </p>
+    </section>
+
+    <section class="block" data-id="moat" data-x="592" data-y="1305" style="left:592px;top:1305px;width:548px;">
+      <div class="section-header purple">Unique Moat</div>
+      <ul>
+        <li>Persistent agent memory compounds in value over time.</li>
+        <li>Cross-event intelligence is missing from incumbents.</li>
+        <li>Closed-cohort deployment solves cold start on day one.</li>
+        <li>Every debrief strengthens future retrieval, ranking, and recommendations.</li>
+      </ul>
+    </section>
+
+    <section class="block footer-band" data-id="footer" data-x="40" data-y="1510" style="left:40px;top:1510px;width:1100px;">
+      Pamoja gives every person and every event an agent that can remember what matters, reason over evolving context, and help people build better relationships over time.
+    </section>
+  </div>
+
+  <pre class="coords" id="coords"></pre>
+
+  <script>
+    const blocks = [...document.querySelectorAll(".block")];
+    const coords = document.getElementById("coords");
+    const canvas = document.getElementById("canvas");
+    const STORAGE_KEY = "pamoja-one-page-layout";
+
+    function dumpPositions() {
+      const data = {};
+      for (const block of blocks) {
+        data[block.dataset.id] = {
+          x: parseInt(block.style.left, 10),
+          y: parseInt(block.style.top, 10),
+          width: parseInt(block.style.width, 10)
+        };
+      }
+      coords.textContent = JSON.stringify(data, null, 2);
+    }
+
+    function savePositions() {
+      const data = {};
+      for (const block of blocks) {
+        data[block.dataset.id] = {
+          left: block.style.left,
+          top: block.style.top,
+          width: block.style.width
+        };
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      dumpPositions();
+    }
+
+    function loadPositions() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        dumpPositions();
+        return;
+      }
+      const saved = JSON.parse(raw);
+      for (const block of blocks) {
+        const item = saved[block.dataset.id];
+        if (!item) continue;
+        block.style.left = item.left;
+        block.style.top = item.top;
+        if (item.width) block.style.width = item.width;
+      }
+      dumpPositions();
+    }
+
+    function resetPositions() {
+      localStorage.removeItem(STORAGE_KEY);
+      for (const block of blocks) {
+        block.style.left = block.dataset.x + "px";
+        block.style.top = block.dataset.y + "px";
+      }
+      dumpPositions();
+    }
+
+    for (const block of blocks) {
+      let startX = 0;
+      let startY = 0;
+      let initialLeft = 0;
+      let initialTop = 0;
+
+      block.addEventListener("pointerdown", (event) => {
+        block.classList.add("dragging");
+        startX = event.clientX;
+        startY = event.clientY;
+        initialLeft = parseInt(block.style.left, 10);
+        initialTop = parseInt(block.style.top, 10);
+        block.setPointerCapture(event.pointerId);
+      });
+
+      block.addEventListener("pointermove", (event) => {
+        if (!block.classList.contains("dragging")) return;
+        const nextLeft = Math.max(0, Math.min(canvas.clientWidth - block.offsetWidth, initialLeft + event.clientX - startX));
+        const nextTop = Math.max(0, Math.min(canvas.clientHeight - block.offsetHeight, initialTop + event.clientY - startY));
+        block.style.left = nextLeft + "px";
+        block.style.top = nextTop + "px";
+      });
+
+      function stopDrag(event) {
+        if (!block.classList.contains("dragging")) return;
+        block.classList.remove("dragging");
+        try {
+          block.releasePointerCapture(event.pointerId);
+        } catch (error) {
+          // no-op
+        }
+        savePositions();
+      }
+
+      block.addEventListener("pointerup", stopDrag);
+      block.addEventListener("pointercancel", stopDrag);
+    }
+
+    document.getElementById("dump-btn").addEventListener("click", dumpPositions);
+    document.getElementById("reset-btn").addEventListener("click", resetPositions);
+
+    loadPositions();
+  </script>
+</body>
+</html>

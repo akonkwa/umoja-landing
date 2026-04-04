@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.DS_Store
+.env.local
+.env
+__pycache__/
+*.log
+*.pdf
+*.png
+*.docx
+*.xlsx
+*.rtf
+~$*
+class_proposals_compare/
+class_proposals_compare_v2/
+extracted_images/
+data/pamoja/

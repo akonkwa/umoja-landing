@@ -1,0 +1,157 @@
+Conference Match Agent
+
+Core Concept
+An agent that helps a conference attendee identify the highest-value people to meet at an event.
+
+The system starts by bootstrapping the user's profile from a PDF export of their LinkedIn, then asks the user to confirm their current goals for the conference. It compares that profile against the conference attendee list, speaker list, sponsor list, and optional agenda metadata to rank the best people to meet, explain why they matter, and suggest how to approach them.
+
+Product Thesis
+Conference networking is high-stakes and low-information. People arrive with limited time, incomplete attendee context, and no intelligent system to prioritize who matters most. Existing tools provide static directories, but they do not reason about fit, timing, complementarity, or user intent.
+
+This product turns conference networking into a goal-driven matching workflow:
+1. Upload LinkedIn PDF
+2. Confirm your goals
+3. Upload or ingest conference attendee list
+4. Get ranked people to meet
+5. Debrief after meetings
+6. Improve future recommendations
+
+Why This Wedge Is Better
+- much narrower than a full social-agent platform
+- easier to explain
+- easier to demo
+- easier to validate
+- strong immediate value
+- preserves the agentic core
+
+Primary User
+- conference attendee
+- founder
+- investor
+- recruiter
+- operator
+- researcher
+
+Primary Use Cases
+- find the best investors to meet
+- find likely customers or partners
+- find hiring candidates
+- find research collaborators
+- find people working on adjacent problems
+
+Inputs
+- LinkedIn profile PDF
+- optional resume
+- optional personal website
+- attendee list / speaker list / sponsor list
+- optional agenda, topics, and session metadata
+- user goals:
+  - fundraising
+  - hiring
+  - partnerships
+  - research collaboration
+  - learning
+
+Outputs
+- top 5 to 10 people to meet
+- short reason for each recommendation
+- meeting priority order
+- suggested outreach opener
+- optional note-taking and debrief workflow
+
+Agentic Definition
+This should still be framed as an agent, not a static recommender.
+
+The Conference Match Agent should:
+- interpret a user's professional profile
+- infer interests and domain focus
+- incorporate explicit goals
+- reason over conference context
+- rank matches using both similarity and complementarity
+- generate explanations
+- update memory after feedback and debrief
+
+MVP Scope
+Build only:
+- LinkedIn PDF ingestion
+- lightweight profile confirmation
+- conference attendee ingestion
+- one core query: "Who should I meet?"
+- ranked recommendations with reasons
+- post-meeting debrief
+
+Do not build:
+- messaging system
+- automatic calendar coordination
+- cross-conference memory graph
+- generalized social network platform
+- autonomous outreach agent
+
+Core System Modules
+1. Profile Ingestion
+Parse LinkedIn PDF and extract:
+- name
+- current role
+- company
+- prior roles
+- industries
+- keywords
+- inferred interests
+
+2. Goal Capture
+Ask:
+- what are you looking for at this conference?
+- what kind of people do you want to meet?
+- what should the agent optimize for?
+
+3. Conference Ingestion
+Parse attendee list and optional metadata:
+- names
+- roles
+- companies
+- bios
+- categories
+- topics
+
+4. Matching Engine
+Score people based on:
+- direct relevance
+- complementary value
+- shared domains
+- shared interests
+- target goals
+- strategic priority
+
+5. Explanation Engine
+Generate compact reasons:
+- why this person matters
+- what angle is relevant
+- what connection or overlap exists
+
+6. Debrief + Feedback
+Capture:
+- who you met
+- whether the recommendation was useful
+- key notes
+- follow-up intent
+
+MVP Success Metric
+- user uploads profile and receives recommendations in under 2 minutes
+- at least one recommendation is rated useful
+- at least one recommendation leads to a real meeting or saved follow-up
+
+Best Demo Flow
+1. Upload LinkedIn PDF
+2. Upload conference attendee list
+3. Confirm conference goal
+4. Ask: "Who should I meet?"
+5. Get top 5 matches with reasons
+6. Mark one as met
+7. Save debrief notes
+
+Recommended Positioning
+If pitched simply:
+"Upload your LinkedIn PDF and the conference attendee list. Tell the agent what you want from the event. It tells you who to meet, why, and how to approach them."
+
+Why This Is Strong
+This keeps the strongest part of the original PAMOJA thesis, agentic reasoning over people and context, while giving it a much tighter and more buildable product wedge.
