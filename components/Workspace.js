@@ -21,7 +21,7 @@ const initialProfileForm = {
 };
 
 const initialEventForm = {
-  communityName: "Agora Class Demo",
+  communityName: "Umoja Class Demo",
   title: "Agentic Match Night",
   description: "An event agent for pairing people based on complementary skills, goals, and prior memory.",
   startAt: "2026-04-10T18:30",

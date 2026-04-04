@@ -27,7 +27,7 @@ function inferEmail(name) {
     .replace(/[^a-z0-9]+/g, ".")
     .replace(/(^[.]+|[.]+$)/g, "");
 
-  return slug ? `${slug}@pamoja.demo` : "";
+  return slug ? `${slug}@umoja.demo` : "";
 }
 
 function fallbackIntentParse(prompt) {
