@@ -106,6 +106,7 @@ export async function POST(request) {
           fallbackName: selectedProfile
             ? db.users.find((item) => item.id === selectedProfile.userId)?.name
             : "",
+          provider: db.meta?.llmProvider,
         }).catch(() => fallbackIntentParse(body.question))) || fallbackIntentParse(body.question);
 
       if (shouldCreateAgent(intent, body.question)) {
@@ -172,6 +173,7 @@ export async function POST(request) {
         selectedEvent: event,
         question: body.question,
         fallbackReply,
+        provider: db.meta?.llmProvider,
       });
 
       db.profileMemory.push({

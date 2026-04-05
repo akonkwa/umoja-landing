@@ -450,11 +450,29 @@ export default function Workspace({ dashboard, setDashboard, api, error }) {
       }),
     [selectedProfile, selectedEvent, usersById, digestHistory, debriefHistory, dashboard]
   );
+  const llmProvider = dashboard?.integrations?.llmProvider || "";
+  const llmOptions = dashboard?.integrations?.llmOptions || [];
 
   async function refreshUniverse() {
     const nextDashboard = await api.callJson("/api/dashboard");
     setDashboard(nextDashboard);
     return nextDashboard;
+  }
+
+  async function switchLlmProvider(provider) {
+    setBusy("llm-provider");
+    setLocalError("");
+    try {
+      await api.callJson("/api/llm-provider", {
+        method: "POST",
+        body: JSON.stringify({ provider }),
+      });
+      await refreshUniverse();
+    } catch (err) {
+      setLocalError(err.message);
+    } finally {
+      setBusy("");
+    }
   }
 
   async function resetUniverse() {
@@ -685,6 +703,22 @@ export default function Workspace({ dashboard, setDashboard, api, error }) {
           <div className="simulation-day-badge">
             <span>Simulation</span>
             <strong>{formatDigestDay(dashboard?.stats?.simulationDay || 0)}</strong>
+          </div>
+          <div className="model-toggle">
+            <span>Model</span>
+            <div className="model-toggle-buttons">
+              {llmOptions.map((option) => (
+                <button
+                  key={option.id}
+                  type="button"
+                  className={llmProvider === option.id ? "model-pill active" : "model-pill"}
+                  disabled={!option.enabled || busy === "llm-provider"}
+                  onClick={() => switchLlmProvider(option.id)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
           </div>
           <button onClick={resetUniverse} disabled={busy === "reset"} type="button">
             {busy === "reset" ? "RESETTING..." : "RESET UNIVERSE"}
